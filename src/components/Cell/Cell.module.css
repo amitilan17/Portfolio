@@ -1,0 +1,128 @@
+.cell {
+    border: 0.5px solid #0E1EB0;
+    display: flex;
+    flex-direction: column;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s;
+    text-align: center;
+    padding-left: 20px;
+    position: relative; /* Establish positioning context */
+    overflow: hidden; /* Hide overflow */
+}
+
+
+.projectThumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the cell */
+    opacity: 0; /* Initially hidden */
+    z-index: 0; /* Behind the content and shade */
+    transform: scale(1);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* On cell hover, show thumbnail */
+.cell:hover .projectThumbnail {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.clickableCell {
+    cursor: pointer;
+}
+
+/* Define cell shade */
+.clickableCell::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at bottom left, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 35%);
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Smooth transition */
+    z-index: 1; /* Positioned behind text but above image */
+}
+
+/* On cell hover, show the shade */
+.clickableCell:hover::before {
+    opacity: 1;
+}
+
+
+.combinedCell {
+    grid-row: span 2;
+}
+
+.cellContent {
+    display: flex;
+    justify-content: flex-start; /* Align content to the start (left) */
+    align-items: flex-end; /* Align content to the bottom */
+    height: 100%; /* Fill the height of the cell */
+    position: relative; /* Ensure stacking context */
+    z-index: 2; /* Place content on top of the image and shade */
+}
+
+.projectIndex {
+    text-align: left;
+    font-family: 'Copernicus', sans-serif;
+    font-weight: bold;
+    line-height: 1;
+    margin-right: 10px; /* Space between index and name */
+    font-size: 70px;
+}
+
+.projectName {
+    flex-grow: 1; /* Fills the remaining space */
+    text-align: left; /* Align name text to the left */
+    font-family: 'David Libre', serif;
+    font-weight: normal;
+    font-size: 16px;
+    margin-bottom: 14px;
+}
+
+/* Text styles */
+.projectIndex,
+.projectName {
+    color: #0E1EB0;
+    transition: color 0.3s ease; /* Smooth transition for text color */
+}
+
+/* On cell hover, change text color */
+.clickableCell:hover .projectIndex,
+.clickableCell:hover .projectName {
+    color: #fff;
+}
+
+.projectName span {
+    border-bottom: 1px dotted;
+    padding-bottom: 0.1px; /* Gap between text and underline */
+    display: inline; /* Wrap border around the text */
+}
+
+
+@font-face {
+    font-family: 'Copernicus';
+    src: url('../../assets/fonts/CopernicusTrial-Bold-BF6616045097aac.ttf') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Copernicus', sans-serif;
+}
+
+@font-face {
+    font-family: 'David Libre';
+    src: url('../../assets/fonts/DavidLibre-Regular.ttf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'David Libre', serif;
+}
