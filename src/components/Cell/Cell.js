@@ -2,7 +2,7 @@ import React from 'react';
 import projectMap from '../../data/projectsData.js';
 import styles from "./Cell.module.css";
 
-const Cell = ({cell, onClick, onHover}) => {
+const Cell = ({cell, onClick}) => {
     const cellKey = `${cell.row + 1}-${cell.col + 1}`;
     const projectDetails = projectMap[cellKey]
         ? {
@@ -13,22 +13,12 @@ const Cell = ({cell, onClick, onHover}) => {
         : null;
     const isAboutCell = cell.rowSpan
 
-    const handleMouseEnter = () => {
-        onHover(cell);
-    };
-
-    const handleMouseLeave = () => {
-        onHover(null);
-    };
-
     return (
         <div
             className={`${styles.cell}
                         ${isAboutCell ? styles.combinedCell : ''}
                         ${projectDetails ? styles.clickableCell : ''}`
             }
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
             onClick={() => onClick(cell)}
             style={{gridRow: cell.rowSpan ? `span ${cell.rowSpan}` : undefined}}
         >

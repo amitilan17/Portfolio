@@ -3,7 +3,7 @@ import Cell from '../Cell/Cell.js';
 import styles from "./Grid.module.css";
 
 
-const Grid = ({grid, onCellClick, onCellHover}) => (
+const Grid = ({grid, onCellClick}) => (
     <div className={styles.grid}>
         {grid.map((row) =>
             row.map((cell) =>
@@ -12,7 +12,6 @@ const Grid = ({grid, onCellClick, onCellHover}) => (
                             key={`${cell.row}-${cell.col}`}
                             cell={cell}
                             onClick={onCellClick}
-                            onHover={onCellHover}
                         />
                     )
             )
