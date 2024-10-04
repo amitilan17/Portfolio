@@ -17,7 +17,7 @@
     border-radius: 0;
     border: 1px solid #0E1EB0;
     width: 70%;
-    height: 70vh;
+    height: 80vh;
     z-index: 4;
 }
 
@@ -70,7 +70,7 @@
     left: 0;
     padding-left: 1%;
     width: 12%; /* Left arrow occupies the left-most 10% */
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, transparent 70%);
+    background: linear-gradient(to right, rgba(14, 30, 176, 0.2) 0%, transparent 70%);
     justify-content: flex-start;
 }
 
@@ -78,7 +78,7 @@
     right: 0;
     padding-right: 1%;
     width: 12%; /* Right arrow occupies the right-most 10% */
-    background: linear-gradient(to left, rgba(0, 0, 0, 0.6) 0%, transparent 70%);
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.5) 0%, transparent 70%);
     justify-content: flex-end;
 }
 
@@ -131,7 +131,119 @@
 }
 
 .popupInfo {
-    padding-top: 10px;
+    height: 100%;
+    padding: 10px 40px 10px 40px;
     font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tagsDiv {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    max-width: 80%;
+    align-self: flex-end;
+}
+
+.tag {
+    background-color: #0E1EB0;
+    text-align: center;
+    padding: 3px 14px;
+    margin-left: 8px;
+    margin-bottom: 6px;
+    color: white;
+    white-space: nowrap;
+}
+
+.descriptionDiv {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    width: 100%;
+}
+
+.hebrewDescription {
+    margin-bottom: 30px;
+    font-size: 14px;
+    text-align: right;
+    font-family: "Narkiss Block", sans-serif;
+    color: #0E1EB0;
+}
+
+.titleDescription {
+    margin-bottom: 30px;
+    font-size: 40px;
+    font-weight: bold;
     text-align: left;
+    font-family: "David Libre", serif;
+    color: #0E1EB0;
+}
+
+
+.englishDescription {
+    text-align: left;
+    font-size: 14px;
+    font-family: Brown, sans-serif;
+    color: #0E1EB0;
+    line-height: 120%;
+}
+
+{/*============== fonts ==============*/}
+
+@font-face {
+    font-family: 'Narkiss Block';
+    src: url('../../assets/fonts/NarkissBlock-Regular-TRIAL.otf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Narkiss Block', sans-serif;
+}
+
+@font-face {
+    font-family: 'Narkiss Block';
+    src: url('../../assets/fonts/NarkissBlock-Semibold-TRIAL.otf') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Narkiss Block', sans-serif;
+}
+
+@font-face {
+    font-family: 'Brown';
+    src: url('../../assets/fonts/Brown-Regular.ttf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Brown', sans-serif;
+}
+
+@font-face {
+    font-family: 'Brown';
+    src: url('../../assets/fonts/Brown-Bold.ttf') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Brown Bold', sans-serif;
+}
+
+/*todo move to common*/
+@font-face {
+    font-family: 'David Libre';
+    src: url('../../assets/fonts/DavidLibre-Bold.ttf') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    font-family: 'David Libre', serif;
 }

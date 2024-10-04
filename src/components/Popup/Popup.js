@@ -6,16 +6,11 @@ import p3Thumbnail from '../../assets/thumbnails/p3_thumbnail.jpg';
 import closeIcon from '../../assets/ic_close.svg';
 import leftArrowIcon from '../../assets/ic_left_arrow.svg';
 import rightArrowIcon from '../../assets/ic_right_arrow.svg';
-import p4Thumbnail from '../../assets/thumbnails/p4_thumbnail.jpg';
-import p5Thumbnail from '../../assets/thumbnails/p5_thumbnail.jpg';
-import p6Thumbnail from '../../assets/thumbnails/p6_thumbnail.jpg';
-import p7Thumbnail from '../../assets/thumbnails/p7_thumbnail.jpg';
-import p8Thumbnail from '../../assets/thumbnails/p8_thumbnail.jpg';
 
 
 const Popup = ({cell, onClose}) => {
     const [activeImage, setActiveImage] = useState(0);
-    const images = [p1Thumbnail, p2Thumbnail, p3Thumbnail]; // Array of images
+    const images = [p1Thumbnail, p2Thumbnail, p3Thumbnail]; // todo use data
 
     const currentImage = images[activeImage];
 
@@ -64,11 +59,23 @@ const Popup = ({cell, onClose}) => {
                 </div>
                 <div className={styles.popupInfo}>
                     <div className={styles.tagsDiv}>
-                        <div className={styles.tag}>
-
+                        {/*todo use data*/}
+                        <div className={styles.tag}>Word</div>
+                        <div className={styles.tag}>Wordy word</div>
+                        <div className={styles.tag}>Word 222222</div>
+                        <div className={styles.tag}>Word 3</div>
+                    </div>
+                    <div className={styles.descriptionDiv}>
+                        <div className={styles.hebrewDescription}>
+                            קולאז׳ וידאו בשני רבדים חיצוניים: טקסט ודימוי, ובשני רבדים פנימיים: אישי וקולקטיבי. דרך ההקבלה וההפרדה בין הקטן, הפרטי, הספציפי לבין הגדול, הגלובלי, המונומנטלי, הסרט הקצר מנסה לענות על השאלה: האם אפשר לתפוס את קץ האנושות?
+                        </div>
+                        <div className={styles.titleDescription}>
+                            צלקת  •  Scar
+                        </div>
+                        <div className={styles.englishDescription}>
+                            Video collage in two external layers: text and image, and in two internal layers: the personal and the collective. Through the parallelism and separation between the small, private, specific aspects and the large, global, monumental, the short film tries to answer the question: Is it possible to grasp the end of humanity?
                         </div>
                     </div>
-                    Some text!
                 </div>
             </div>
         </div>

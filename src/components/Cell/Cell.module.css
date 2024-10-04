@@ -41,7 +41,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at bottom left, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 35%);
+    background: radial-gradient(circle at bottom left, rgba(14, 30, 176, 0.35) 0%, rgba(0, 0, 0, 0) 35%);
     opacity: 0; /* Initially hidden */
     transition: opacity 0.3s ease; /* Smooth transition */
     z-index: 1; /* Positioned behind text but above image */
