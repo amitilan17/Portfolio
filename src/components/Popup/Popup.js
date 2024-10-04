@@ -66,14 +66,14 @@ const Popup = ({cell, onClose}) => {
                         <div className={styles.tag}>Word 3</div>
                     </div>
                     <div className={styles.descriptionDiv}>
-                        <div className={styles.hebrewDescription}>
-                            קולאז׳ וידאו בשני רבדים חיצוניים: טקסט ודימוי, ובשני רבדים פנימיים: אישי וקולקטיבי. דרך ההקבלה וההפרדה בין הקטן, הפרטי, הספציפי לבין הגדול, הגלובלי, המונומנטלי, הסרט הקצר מנסה לענות על השאלה: האם אפשר לתפוס את קץ האנושות?
+                        <div className={styles.hebrewDescription} dir="rtl">
+                            קולאז׳ וידאו בשני רבדים חיצוניים: טקסט ודימוי, ובשני רבדים פנימיים: אישי וקולקטיבי. דרך ההקבלה וההפרדה בין הקטן, הפרטי, הספציפי לבין הגדול, הגלובלי, המונומנטלי, הסרט הקצר מנסה לענות על השאלה: <strong>האם אפשר לתפוס את קץ האנושות?</strong>
                         </div>
-                        <div className={styles.titleDescription}>
-                            צלקת  •  Scar
+                        <div className={styles.titleDescription} dir="rtl">
+                            <span className={styles.titleText}>צלקת  •  Scar</span>
                         </div>
                         <div className={styles.englishDescription}>
-                            Video collage in two external layers: text and image, and in two internal layers: the personal and the collective. Through the parallelism and separation between the small, private, specific aspects and the large, global, monumental, the short film tries to answer the question: Is it possible to grasp the end of humanity?
+                            Video collage in two external layers: text and image, and in two internal layers: the personal and the collective. Through the parallelism and separation between the small, private, specific aspects and the large, global, monumental, the short film tries to answer the question: <strong>Is it possible to grasp the end of humanity?</strong>
                         </div>
                     </div>
                 </div>

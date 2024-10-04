@@ -181,6 +181,12 @@
     color: #0E1EB0;
 }
 
+.titleText {
+    display: inline-block;
+    border-bottom: 1.5px dotted #0E1EB0;
+    padding-bottom: 0.5px;
+}
+
 
 .englishDescription {
     text-align: left;
