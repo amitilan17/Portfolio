@@ -16,8 +16,8 @@ const Cell = ({cell, onClick}) => {
     return (
         <div
             className={`${styles.cell}
-                        ${isAboutCell ? styles.combinedCell : ''}
-                        ${projectDetails ? styles.clickableCell : ''}`
+                        ${isAboutCell ? styles.aboutCell : ''}
+                        ${projectDetails ? styles.projectCell : ''}`
             }
             onClick={() => onClick(cell)}
             style={{gridRow: cell.rowSpan ? `span ${cell.rowSpan}` : undefined}}
