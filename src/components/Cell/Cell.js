@@ -1,9 +1,10 @@
 import React from 'react';
 import projectMap from '../../data/projectsData.js';
 import styles from "./Cell.module.css";
+import { getCellKey } from '../../Utils.js';
 
 const Cell = ({cell, onClick}) => {
-    const cellKey = `${cell.row + 1}-${cell.col + 1}`;
+    const cellKey = getCellKey(cell);
     const projectDetails = projectMap[cellKey]
         ? {
             index: projectMap[cellKey].index,
@@ -19,7 +20,11 @@ const Cell = ({cell, onClick}) => {
                         ${isAboutCell ? styles.aboutCell : ''}
                         ${projectDetails ? styles.projectCell : ''}`
             }
-            onClick={() => onClick(cell)}
+            onClick={() => {
+                if (projectDetails !== null) {
+                    onClick(cell)
+                }
+            }}
             style={{gridRow: cell.rowSpan ? `span ${cell.rowSpan}` : undefined}}
         >
             {projectDetails && (

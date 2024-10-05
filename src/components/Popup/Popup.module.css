@@ -200,7 +200,7 @@
 
 @font-face {
     font-family: 'Narkiss Block';
-    src: url('../../assets/fonts/NarkissBlock-Regular-TRIAL.otf') format('woff2');
+    src: url('../../assets/fonts/NarkissBlock-Light-TRIAL.otf') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
@@ -222,7 +222,7 @@ body {
 
 @font-face {
     font-family: 'Brown';
-    src: url('../../assets/fonts/Brown-Regular.ttf') format('woff2');
+    src: url('../../assets/fonts/Brown-Light.ttf') format('woff2');
     font-weight: normal;
     font-style: normal;
 }

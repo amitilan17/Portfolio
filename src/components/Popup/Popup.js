@@ -6,11 +6,16 @@ import p3Thumbnail from '../../assets/thumbnails/p3_thumbnail.jpg';
 import closeIcon from '../../assets/ic_close.svg';
 import leftArrowIcon from '../../assets/ic_left_arrow.svg';
 import rightArrowIcon from '../../assets/ic_right_arrow.svg';
+import projectMap from "../../data/projectsData";
+import { getCellKey } from '../../Utils.js';
 
 
 const Popup = ({cell, onClose}) => {
     const [activeImage, setActiveImage] = useState(0);
-    const images = [p1Thumbnail, p2Thumbnail, p3Thumbnail]; // todo use data
+
+    const cellKey = getCellKey(cell);
+    const tempImage = projectMap[cellKey].thumbnailPath;
+    const images = [tempImage, p2Thumbnail, p3Thumbnail]; // todo use data
 
     const currentImage = images[activeImage];
 
