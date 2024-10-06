@@ -102,6 +102,16 @@
     display: inline; /* Wrap border around the text */
 }
 
+.aboutMeFlexContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+}
+
+.aboutMeButton{
+    white-space: nowrap; /* Ensure "About Me" stays on one line */
+    margin-left: 6px;
+}
 
 {/*============== fonts ==============*/}
 

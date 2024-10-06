@@ -1,7 +1,7 @@
 import React from 'react';
 import projectsDataMap from '../../data/projectsData.js';
 import styles from "./Cell.module.css";
-import { getCellKey } from '../../Utils.js';
+import {getCellKey} from '../../Utils.js';
 
 const Cell = ({cell, onClick}) => {
     const cellKey = getCellKey(cell);
@@ -50,8 +50,17 @@ const Cell = ({cell, onClick}) => {
                 ) : ('')
                 }
                 {isAboutCell ? (
-                    <div className={styles.projectIndex}>
-                        Amit Ilan
+                    <div>
+                        <div className={styles.projectIndex}>
+                            Amit
+                        </div>
+                        <div className={styles.aboutMeFlexContainer}>
+                            <div className={styles.projectIndex}>
+                                Ilan
+                            </div>
+                            <div className={`${styles.projectName} ${styles.aboutMeButton}`}>
+                                <span>About Me</span></div>
+                        </div>
                     </div>
                 ) : ('')}
             </div>
