@@ -3,7 +3,7 @@ import projectsDataMap from '../../data/projectsData.js';
 import styles from "./Cell.module.css";
 import {getCellKey} from '../../Utils.js';
 
-const Cell = ({cell, onClick, onAboutCellClick}) => {
+const Cell = ({cell, onClick, isAboutCellOpen}) => {
     const cellKey = getCellKey(cell);
     const projectDetails = projectsDataMap[cellKey] // todo add new properties?
         ? {
@@ -22,17 +22,19 @@ const Cell = ({cell, onClick, onAboutCellClick}) => {
 
     return (
         <div
-            className={`${styles.cell} ${styles.projectCell}`}
+            className={`${styles.cell} ${styles.projectCell} ${isAboutCellOpen ? styles.aboutCellOpen : ''}`}
             onClick={() => {
-                onClick(cell)
+                if (!isAboutCellOpen) {
+                    onClick(cell)
+                }
             }}
         >
-
-            <img
-                src={projectDetails.thumbnailPath}
-                alt={projectDetails.name}
-                className={styles.projectThumbnail}
-            />
+            {!isAboutCellOpen && (
+                <img
+                    src={projectDetails.thumbnailPath}
+                    alt={projectDetails.name}
+                    className={styles.projectThumbnail}
+                />)}
 
             <div className={styles.cellContent}>
                 <>

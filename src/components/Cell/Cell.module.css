@@ -47,11 +47,15 @@
     z-index: 1; /* Positioned behind text but above image */
 }
 
-/* On cell hover, show the shade */
+/* On cell hover, show the shade. (only if about cell is not open) */
 .projectCell:hover::before {
     opacity: 1;
 }
+.aboutCellOpen:hover::before {
+    opacity: 0;
+}
 
+/*todo move?*/
 .aboutCell {
     grid-row: span 2;
 }
@@ -87,13 +91,19 @@
 .projectIndex,
 .projectName {
     color: #0E1EB0;
-    transition: color 0.3s ease; /* Smooth transition for text color */
+    opacity: 1;
+    transition: color 0.3s ease, opacity 0.3s ease; /* Smooth transition for text color */
 }
 
 /* On cell hover, change text color */
 .projectCell:hover .projectIndex,
 .projectCell:hover .projectName {
     color: #fff;
+}
+
+.aboutCellOpen .projectIndex,
+.aboutCellOpen .projectName {
+    opacity: 0;
 }
 
 .projectName span {
@@ -111,6 +121,11 @@
 .aboutMeButton{
     white-space: nowrap; /* Ensure "About Me" stays on one line */
     margin-left: 6px;
+    cursor: pointer;
+}
+
+.aboutCellOpen {
+    cursor: default;
 }
 
 {/*============== fonts ==============*/}

@@ -6,9 +6,9 @@ import Popup from "./components/Popup/Popup";
 
 const App = () => {
     const [activeCell, setActiveCell] = useState(null);
-    const [isAboutMeOpen, setIsAboutMeOpen] = useState(false);
+    const [isAboutCellOpen, setIsAboutCellOpen] = useState(false);
 
-    const grid = isAboutMeOpen===false ? // todo clean?
+    const grid = !isAboutCellOpen ?
         [
             [{row: 0, col: 0, rowSpan: 2}, {row: 0, col: 1}, {row: 0, col: 2}, {row: 0, col: 3}, {row: 0, col: 4}],
             [null, {row: 1, col: 1}, {row: 1, col: 2}, {row: 1, col: 3}, {row: 1, col: 4}],
@@ -30,7 +30,7 @@ const App = () => {
     };
 
     const handleOpenAbout = () => {
-        setIsAboutMeOpen(true);
+        setIsAboutCellOpen(true);
     }
 
     return (
@@ -39,6 +39,7 @@ const App = () => {
                 grid={grid}
                 onCellClick={handleCellClick}
                 onAboutCellClick={handleOpenAbout}
+                isAboutCellOpen={isAboutCellOpen}
             />
             {activeCell && <Popup cell={activeCell} onClose={handleClosePopup}/>}
         </div>

@@ -5,7 +5,7 @@ import styles from "./Grid.module.css";
 import {aboutCellKey, getCellKey} from "../../Utils";
 
 
-const Grid = ({grid, onCellClick, onAboutCellClick}) => (
+const Grid = ({grid, onCellClick, onAboutCellClick, isAboutCellOpen}) => (
     <div className={styles.grid}>
         {grid.map((row) =>
             row.map((cell) =>
@@ -21,6 +21,7 @@ const Grid = ({grid, onCellClick, onAboutCellClick}) => (
                                 key={getCellKey(cell)}
                                 cell={cell}
                                 onClick={onCellClick}
+                                isAboutCellOpen={isAboutCellOpen}
                             />
                         )
                     )
