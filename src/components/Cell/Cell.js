@@ -3,7 +3,7 @@ import projectsDataMap from '../../data/projectsData.js';
 import styles from "./Cell.module.css";
 import {getCellKey} from '../../Utils.js';
 
-const Cell = ({cell, onClick}) => {
+const Cell = ({cell, onClick, onAboutCellClick}) => {
     const cellKey = getCellKey(cell);
     const projectDetails = projectsDataMap[cellKey] // todo add new properties?
         ? {
@@ -12,57 +12,39 @@ const Cell = ({cell, onClick}) => {
             thumbnailPath: projectsDataMap[cellKey].thumbnailPath
         }
         : null;
-    const isAboutCell = cell.rowSpan
+
+    if (projectDetails === null) {
+        return (
+            <div className={styles.cell}>
+            </div>
+        );
+    }
 
     return (
         <div
-            className={`${styles.cell}
-                        ${isAboutCell ? styles.aboutCell : ''}
-                        ${projectDetails ? styles.projectCell : ''}`
-            }
+            className={`${styles.cell} ${styles.projectCell}`}
             onClick={() => {
-                if (projectDetails !== null) {
-                    onClick(cell)
-                }
+                onClick(cell)
             }}
-            style={{gridRow: cell.rowSpan ? `span ${cell.rowSpan}` : undefined}}
         >
-            {projectDetails && (
-                <img
-                    src={projectDetails.thumbnailPath}
-                    alt={projectDetails.name}
-                    className={styles.projectThumbnail} // Class for styling
-                />
-            )}
+
+            <img
+                src={projectDetails.thumbnailPath}
+                alt={projectDetails.name}
+                className={styles.projectThumbnail}
+            />
 
             <div className={styles.cellContent}>
-                {projectDetails ? (
-                    <>
-                        <div className={styles.projectIndex}>
-                            {projectDetails.index}
-                        </div>
-                        <div className={styles.projectName}>
+                <>
+                    <div className={styles.projectIndex}>
+                        {projectDetails.index}
+                    </div>
+                    <div className={styles.projectName}>
                             <span>
                             {projectDetails.name}
                                 </span>
-                        </div>
-                    </>
-                ) : ('')
-                }
-                {isAboutCell ? (
-                    <div>
-                        <div className={styles.projectIndex}>
-                            Amit
-                        </div>
-                        <div className={styles.aboutMeFlexContainer}>
-                            <div className={styles.projectIndex}>
-                                Ilan
-                            </div>
-                            <div className={`${styles.projectName} ${styles.aboutMeButton}`}>
-                                <span>About Me</span></div>
-                        </div>
                     </div>
-                ) : ('')}
+                </>
             </div>
         </div>
     );
