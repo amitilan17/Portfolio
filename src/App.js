@@ -29,8 +29,8 @@ const App = () => {
         setActiveCell(null);
     };
 
-    const handleOpenAbout = () => {
-        setIsAboutCellOpen(true);
+    const handleAboutCell = (isOpen) => {
+        setIsAboutCellOpen(isOpen);
     }
 
     return (
@@ -38,7 +38,7 @@ const App = () => {
             <Grid
                 grid={grid}
                 onCellClick={handleCellClick}
-                onAboutCellClick={handleOpenAbout}
+                onToggleAboutCell={handleAboutCell}
                 isAboutCellOpen={isAboutCellOpen}
             />
             {activeCell && <Popup cell={activeCell} onClose={handleClosePopup}/>}

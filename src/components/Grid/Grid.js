@@ -5,16 +5,16 @@ import styles from "./Grid.module.css";
 import {aboutCellKey, getCellKey} from "../../Utils";
 
 
-const Grid = ({grid, onCellClick, onAboutCellClick, isAboutCellOpen}) => (
+const Grid = ({grid, onCellClick, onToggleAboutCell, isAboutCellOpen}) => (
     <div className={styles.grid}>
         {grid.map((row) =>
             row.map((cell) =>
                     cell && (
                         getCellKey(cell) === aboutCellKey ? (
                             <AboutCell
-                                key={getCellKey(cell)}
                                 cell={cell}
-                                onClick={onAboutCellClick}
+                                onToggleAboutCell={onToggleAboutCell}
+                                isOpen={isAboutCellOpen}
                             />
                         ) : (
                             <Cell
