@@ -1,15 +1,15 @@
 import React from 'react';
-import projectMap from '../../data/projectsData.js';
+import projectsDataMap from '../../data/projectsData.js';
 import styles from "./Cell.module.css";
 import { getCellKey } from '../../Utils.js';
 
 const Cell = ({cell, onClick}) => {
     const cellKey = getCellKey(cell);
-    const projectDetails = projectMap[cellKey]
+    const projectDetails = projectsDataMap[cellKey] // todo add new properties?
         ? {
-            index: projectMap[cellKey].index,
-            name: projectMap[cellKey].name,
-            thumbnailPath: projectMap[cellKey].thumbnailPath
+            index: projectsDataMap[cellKey].index,
+            name: projectsDataMap[cellKey].name,
+            thumbnailPath: projectsDataMap[cellKey].thumbnailPath
         }
         : null;
     const isAboutCell = cell.rowSpan
