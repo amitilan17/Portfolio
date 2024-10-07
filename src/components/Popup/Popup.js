@@ -1,4 +1,5 @@
 import styles from "./Popup.module.css";
+import sharedStyles from "../../sharedStyles.module.css";
 import React, {useState} from "react";
 import p2Thumbnail from '../../assets/thumbnails/p2_thumbnail.jpg';
 import p3Thumbnail from '../../assets/thumbnails/p3_thumbnail.jpg';
@@ -16,8 +17,8 @@ const Popup = ({cell, onClose}) => {
                 <ImageGallery cell={cell}/>
             </div>
             <div className={styles.popupRight}>
-                <button className={styles.popupCloseButton} onClick={onClose}>
-                    <img src={closeIcon} alt="Close" className={styles.popupCloseButton}/>
+                <button className={sharedStyles.closeButton} onClick={onClose}>
+                    <img src={closeIcon} alt="Close" className={sharedStyles.closeButton}/>
                 </button>
                 <ProjectDetails cell={cell}/>
             </div>

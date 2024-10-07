@@ -1,5 +1,5 @@
 import styles from "./Cell.module.css";
-import moreStyles from "../Popup/Popup.module.css"; //todo name
+import sharedStyles from "../../sharedStyles.module.css";
 import React from "react";
 import closeIcon from "../../assets/ic_close.svg";
 
@@ -29,8 +29,8 @@ const AboutCell = ({cell, onToggleAboutCell, isOpen}) => {
                     </div>
                 </div>
                 <div>
-                    {isOpen && <button className={moreStyles.popupCloseButton} onClick={() => onToggleAboutCell(false)}>
-                        <img src={closeIcon} alt="Close" className={moreStyles.popupCloseButton}/>
+                    {isOpen && <button className={sharedStyles.closeButton} onClick={() => onToggleAboutCell(false)}>
+                        <img src={closeIcon} alt="Close" className={sharedStyles.closeButton}/>
                     </button>}
                 </div>
             </div>
