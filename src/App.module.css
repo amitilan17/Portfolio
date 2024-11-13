@@ -3,3 +3,49 @@
     width: 100vw;
     position: relative;
 }
+
+.languageButtonWrapper {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: inline-block;
+    z-index: 2;
+}
+
+.languageButton, .dropdownButton {
+    background-color: #f0f0f0;
+    border: .5px solid #0E1EB0;
+    color: #0E1EB0;
+    padding: 5px 10px;
+    cursor: pointer;
+    width: 40px;
+    display: block;
+    text-align: center;
+    border-radius: 0;
+    font-family: "Narkiss Block", sans-serif;
+    font-size: 14px;
+}
+
+.languageButton:hover, .dropdownButton:hover {
+    background-color: #0E1EB0;
+    color: #f0f0f0;
+}
+
+.languageButton {
+    margin-top: 6px;
+    margin-right: 6px;
+}
+
+.dropdownButton {
+    border-left: 1px solid #0E1EB0;
+    border-bottom: 1px solid #0E1EB0;
+    border-right: 1px solid #0E1EB0;
+    border-top: none;
+}
+
+.dropdownButton {
+    position: absolute;
+    top: 100%; /* Aligns directly below the button */
+    left: 0;
+    pointer-events: auto;
+}

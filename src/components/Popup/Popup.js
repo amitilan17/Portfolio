@@ -10,7 +10,7 @@ import projectsDataMap from "../../data/projectsData";
 import {getCellKey} from '../../Utils.js';
 
 
-const Popup = ({cell, onClose}) => {
+const Popup = ({cell, onClose, isHeb}) => {
     return (<div className={styles.popupOverlay} onClick={onClose}>
         <div className={styles.popupContent} onClick={(e) => e.stopPropagation()}>
             <div className={styles.popupLeft}>
@@ -20,7 +20,7 @@ const Popup = ({cell, onClose}) => {
                 <button className={sharedStyles.closeButton} onClick={onClose}>
                     <img src={closeIcon} alt="Close" className={sharedStyles.closeButton}/>
                 </button>
-                <ProjectDetails cell={cell}/>
+                <ProjectDetails cell={cell} isHeb={isHeb}/>
             </div>
         </div>
     </div>);
@@ -71,11 +71,11 @@ const ImageGallery = ({cell}) => {
     );
 }
 
-const ProjectDetails = ({cell}) => {
+const ProjectDetails = ({cell, isHeb}) => {
     const projectDetails = projectsDataMap[getCellKey(cell)];
-    const hebDescription = projectDetails.hebrewDescription;
-    const engDescription = projectDetails.englishDescription;
-    const title = projectDetails.title;
+    const hebDescription = projectDetails.hebDescription;
+    const engDescription = projectDetails.engDescription;
+    const title = isHeb ? projectDetails.hebTitle : projectDetails.engTitle;
     const tags = projectDetails.tags;
     return (
         <div className={styles.popupInfo}>
@@ -84,11 +84,14 @@ const ProjectDetails = ({cell}) => {
                     <div className={styles.tag}>{tag}</div>)}
             </div>
             <div className={styles.descriptionDiv}>
-                <div className={styles.hebrewDescription} dir="rtl" dangerouslySetInnerHTML={{__html: hebDescription}}/>
+                {isHeb ? (<div className={styles.hebrewDescription} dir="rtl"
+                               dangerouslySetInnerHTML={{__html: hebDescription}}/>)
+                    : (<div className={styles.englishDescription}
+                            dangerouslySetInnerHTML={{__html: engDescription}}/>)
+                }
                 <div className={styles.titleDescription} dir="rtl">
                     <span className={styles.titleText}>{title}</span>
                 </div>
-                <div className={styles.englishDescription} dangerouslySetInnerHTML={{__html: engDescription}}/>
             </div>
         </div>
     );

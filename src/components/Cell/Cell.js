@@ -3,12 +3,12 @@ import projectsDataMap from '../../data/projectsData.js';
 import styles from "./Cell.module.css";
 import {getCellKey} from '../../Utils.js';
 
-const Cell = ({cell, onClick, isAboutCellOpen}) => {
+const Cell = ({cell, onClick, isAboutCellOpen, isHeb}) => {
     const cellKey = getCellKey(cell);
-    const projectDetails = projectsDataMap[cellKey] // todo add new properties?
+    const projectDetails = projectsDataMap[cellKey]
         ? {
             index: projectsDataMap[cellKey].index,
-            name: projectsDataMap[cellKey].name,
+            title: isHeb ? projectsDataMap[cellKey].hebTitle : projectsDataMap[cellKey].engTitle,
             thumbnailPath: projectsDataMap[cellKey].thumbnailPath
         }
         : null;
@@ -32,7 +32,7 @@ const Cell = ({cell, onClick, isAboutCellOpen}) => {
             {!isAboutCellOpen && (
                 <img
                     src={projectDetails.thumbnailPath}
-                    alt={projectDetails.name}
+                    alt={projectDetails.title}
                     className={styles.projectThumbnail}
                 />)}
 
@@ -43,7 +43,7 @@ const Cell = ({cell, onClick, isAboutCellOpen}) => {
                     </div>
                     <div className={styles.projectName}>
                             <span>
-                            {projectDetails.name}
+                            {projectDetails.title}
                                 </span>
                     </div>
                 </>

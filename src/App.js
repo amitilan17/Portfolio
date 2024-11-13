@@ -7,6 +7,8 @@ import Popup from "./components/Popup/Popup";
 const App = () => {
     const [activeCell, setActiveCell] = useState(null);
     const [isAboutCellOpen, setIsAboutCellOpen] = useState(false);
+    const [isHeb, setIsHeb] = useState(false);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const grid = !isAboutCellOpen ?
         [
@@ -33,17 +35,64 @@ const App = () => {
         setIsAboutCellOpen(isOpen);
     }
 
+    const handleToggleLanguage = () => {
+        setIsHeb(!isHeb);
+        setIsDropdownOpen(false);
+    };
+
+    const handleOpenDropdown = () => {
+        setIsDropdownOpen(true);
+    };
+
+    const handleCloseDropdown = () => {
+        setIsDropdownOpen(false);
+    };
+
     return (
         <div className={styles.container}>
+            <LanguageMenu
+                onMouseLeave={handleCloseDropdown}
+                onOpenDropdown={handleOpenDropdown}
+                isHeb={isHeb}
+                isDropdownOpen={isDropdownOpen}
+                onToggleLanguage={handleToggleLanguage}
+            />
             <Grid
                 grid={grid}
                 onCellClick={handleCellClick}
                 onToggleAboutCell={handleAboutCell}
                 isAboutCellOpen={isAboutCellOpen}
+                isHeb={isHeb}
             />
-            {activeCell && <Popup cell={activeCell} onClose={handleClosePopup}/>}
+            {activeCell &&
+                <Popup cell={activeCell} onClose={handleClosePopup} isHeb={isHeb}/>
+            }
         </div>
     );
 };
 
 export default App;
+
+
+function LanguageMenu({ onMouseLeave, onOpenDropdown, isHeb, isDropdownOpen, onToggleLanguage }) {
+    return (
+        <div
+            className={styles.languageButtonWrapper}
+            onMouseLeave={onMouseLeave}
+        >
+            <button onClick={onOpenDropdown} className={styles.languageButton}>
+                {isHeb ? 'עב' : 'EN'}
+            </button>
+
+            {isDropdownOpen && (
+                <button
+                    onMouseEnter={onOpenDropdown}
+                    onClick={onToggleLanguage}
+                    className={styles.dropdownButton}
+                >
+                    {isHeb ? 'EN' : 'עב'}
+                </button>
+            )}
+        </div>
+    );
+}

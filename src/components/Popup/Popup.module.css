@@ -162,6 +162,15 @@
     color: #0E1EB0;
 }
 
+.englishDescription {
+    margin-bottom: 30px;
+    font-size: 14px;
+    text-align: left;
+    font-family: Brown, sans-serif;
+    color: #0E1EB0;
+    line-height: 120%;
+}
+
 .titleDescription {
     margin-bottom: 30px;
     font-size: 40px;
@@ -176,12 +185,4 @@
     white-space: nowrap;
     border-bottom: 1.5px dotted #0E1EB0;
     padding-bottom: 0.5px;
-}
-
-.englishDescription {
-    text-align: left;
-    font-size: 14px;
-    font-family: Brown, sans-serif;
-    color: #0E1EB0;
-    line-height: 120%;
 }

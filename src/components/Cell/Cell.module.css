@@ -113,12 +113,24 @@
     position: relative;
 }
 
-.aboutTextContainer {
+.aboutTextHeb {
     padding: 50px;
     width: 50%;
     margin-bottom: 30px;
     font-size: 14px;
     text-align: right;
+    font-family: "Narkiss Block", sans-serif;
+    margin-left: auto;
+    color: #0E1EB0;
+}
+
+.aboutTextEng {
+    padding: 50px;
+    width: 50%;
+    margin-bottom: 30px;
+    margin-right: 60px;
+    font-size: 14px;
+    text-align: left;
     font-family: "Narkiss Block", sans-serif;
     margin-left: auto;
     color: #0E1EB0;
