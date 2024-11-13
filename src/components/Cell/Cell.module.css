@@ -20,7 +20,7 @@
     opacity: 0; /* Initially hidden */
     z-index: 0; /* Behind the content and shade */
     transform: scale(1);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .projectCell {
@@ -103,6 +103,25 @@
 
 .aboutCell {
     grid-row: span 2;
+}
+
+.aboutCellContent {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.aboutTextContainer {
+    padding: 50px;
+    width: 50%;
+    margin-bottom: 30px;
+    font-size: 14px;
+    text-align: right;
+    font-family: "Narkiss Block", sans-serif;
+    margin-left: auto;
+    color: #0E1EB0;
 }
 
 .aboutMeFlexContainer {
