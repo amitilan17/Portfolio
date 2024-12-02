@@ -137,16 +137,6 @@
     align-self: flex-end;
 }
 
-.tag {
-    background-color: #0E1EB0;
-    text-align: center;
-    padding: 3px 14px;
-    margin-left: 8px;
-    margin-bottom: 6px;
-    color: white;
-    white-space: nowrap;
-}
-
 .descriptionDiv {
     display: flex;
     flex-direction: column;
@@ -169,6 +159,27 @@
     font-family: Brown, sans-serif;
     color: #0E1EB0;
     line-height: 120%;
+}
+
+.tag{
+    height: 20px;
+    line-height: 20px;
+    background-color: #0E1EB0;
+    text-align: center;
+    padding: 3px 14px;
+    margin-left: 8px;
+    margin-bottom: 6px;
+    color: white;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+.hebrewTag{
+    font-family: "Narkiss Block", sans-serif;
+}
+
+.englishTag{
+    font-family: Brown, sans-serif;
 }
 
 .titleDescription {

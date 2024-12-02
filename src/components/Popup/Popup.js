@@ -76,12 +76,13 @@ const ProjectDetails = ({cell, isHeb}) => {
     const hebDescription = projectDetails.hebDescription;
     const engDescription = projectDetails.engDescription;
     const title = isHeb ? projectDetails.hebTitle : projectDetails.engTitle;
-    const tags = projectDetails.tags;
+    const tags = isHeb ? projectDetails.hebTags: projectDetails.engTags;
+    const tagsStyle = isHeb ? styles.hebrewTag: styles.englishTag;
     return (
         <div className={styles.popupInfo}>
             <div className={styles.tagsDiv}>
                 {tags.map((tag) =>
-                    <div className={styles.tag}>{tag}</div>)}
+                    <div className={`${styles.tag} ${tagsStyle}`}>{tag}</div>)}
             </div>
             <div className={styles.descriptionDiv}>
                 {isHeb ? (<div className={styles.hebrewDescription} dir="rtl"
