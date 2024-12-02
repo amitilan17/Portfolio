@@ -26,15 +26,15 @@ const Popup = ({cell, onClose, isHeb}) => {
     </div>);
 
 }
-
-const ImageGallery = ({cell}) => {
+const ImageGallery = ({ cell }) => {
     const [activeImageIndex, setActiveImageIndex] = useState(0);
 
     const cellKey = getCellKey(cell);
-    const tempImage = projectsDataMap[cellKey].thumbnailPath;
-    const images = [tempImage, p2Thumbnail, p3Thumbnail]; // todo use data
-
+    const images = projectsDataMap[cellKey]?.images;
     const currentImage = images[activeImageIndex];
+
+    // Check if the project has cinematicPopup enabled
+    const isCinematicProject = projectsDataMap[cellKey]?.cinematicPopup === true;
 
     const goToNextImage = () => {
         setActiveImageIndex((prev) => (prev + 1) % images.length);
@@ -46,18 +46,31 @@ const ImageGallery = ({cell}) => {
 
     return (
         <div className={styles.imageGallery}>
-            <img
-                src={currentImage}
-                alt="Gallery"
-                className={styles.popupImage}
-            />
+            {isCinematicProject ? (
+                // Cinematic project: image inside a container with blue background and margin
+                <div className={styles.popupCinematicImageContainer}>
+                    <img
+                        src={currentImage}
+                        alt="Gallery"
+                        className={styles.popupCinematicImage}
+                    />
+                </div>
+            ) : (
+                // Non-custom project: image directly in the gallery
+                <img
+                    src={currentImage}
+                    alt="Gallery"
+                    className={styles.popupImage}
+                />
+            )}
+
             <div className={`${styles.galleryArrow} ${styles.left}`} onClick={goToPrevImage}>
-                <img src={leftArrowIcon} alt="Left Arrow" className="arrowIcon"/>
+                <img src={leftArrowIcon} alt="Left Arrow" className="arrowIcon" />
             </div>
             <div className={`${styles.galleryArrow} ${styles.right}`} onClick={goToNextImage}>
-                <img src={rightArrowIcon} alt="Right Arrow" className="arrowIcon"/>
-
+                <img src={rightArrowIcon} alt="Right Arrow" className="arrowIcon" />
             </div>
+
             <div className={styles.galleryDots}>
                 {images.map((_, index) => (
                     <div
@@ -69,7 +82,7 @@ const ImageGallery = ({cell}) => {
             </div>
         </div>
     );
-}
+};
 
 const ProjectDetails = ({cell, isHeb}) => {
     const projectDetails = projectsDataMap[getCellKey(cell)];

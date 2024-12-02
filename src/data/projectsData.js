@@ -8,6 +8,18 @@ import p7Thumbnail from '../assets/thumbnails/p7_thumbnail.jpg';
 import p8Thumbnail from '../assets/thumbnails/p8_thumbnail.jpg';
 
 
+const generateProjectImages = (projectId, count) => {
+    const images = [];
+    const context = require.context('../assets/images/', true, /\.jpg$/);
+
+    for (let i = 1; i <= count; i++) {
+        const imagePath = `p${projectId}/${i}.jpg`;
+        images.push(context(`./${imagePath}`));
+    }
+    return images;
+};
+
+
 const projectsDataMap = {
     '1-2': {
         index: 1,
@@ -18,7 +30,9 @@ const projectsDataMap = {
         hebTitle: "צלקת",
         engTitle: "Scar",
         hebTags: ["וידאו", "רב-תחומי", "אישי", "קולאז׳"],
-        engTags: ["Video", "Interdisciplinary", "Personal", "Collage"]
+        engTags: ["Video", "Interdisciplinary", "Personal", "Collage"],
+        images: generateProjectImages(1, 6),
+        cinematicPopup: true
     },
     '1-3': {
         index: 2,
@@ -29,31 +43,35 @@ const projectsDataMap = {
         hebTitle: 'אז מה אם אתן תאומות',
         engTitle: 'Your\'e Twins, So What',
         hebTags: ["אינפוגרפיקה", "צילום", "אישי", "פרינט"],
-        engTags: ["Infography", "Photography", "Print", "Personal"]
+        engTags: ["Infography", "Photography", "Print", "Personal"],
+        images: generateProjectImages(2, 5)
     },
     '1-4': {
         index: 3, name: 'רגעי חולין', thumbnailPath: p3Thumbnail,
         hebDescription: '<strong>רגעי חולין</strong> הוא מוצר אינטראקטיבי המזמין את המשתמש לגשר מעט על הפער בין חוויה לזכרון, דרך כתיבה ברגעים אקראיים. במסגרת הפרוייקט עיצבתי את המטרות, ההגדרות והמיתוג של המוצר, את האפליקציה שדרכה מתבצע איסוף הרגעים, ואת היומן המודפס שנשלח אל המשתמש בתום הכתיבה ומשמש כקפסולת זמן האוצרת בתוכה הוויה של תקופה.' +
             '<br/><br/>' +
             'במסגרת הפרוייקט פיתחתי אפליקציית אנדרואיד שאיפשרה לחוות את המוצר. מבחינת backend, העיבוד של המידע מהיוזר לפורמט מעוצב של עמוד ביומן נעשה בצורה אוטומטית בפייתון. כמו כן, פיתחתי שתי תכניות ששירתו שתי פרזנטציות שונות של הפרוייקט: האחת שולחת להדפסה במדפסת סמוכה את הרגע שזה עתה נכתב באפליקציה, כדי לייצר ״אפקט וואו״. השניה שולחת את אותו הקובץ למייל כעבור מספר ימים, ומטרתה לייצר את האפקט של קפסולת זמן.<br/><br/> ניתן לצפות בrepo של הפרוייקט בגיטהאב.',
-        engDescription: 'Everyday Moments is a product that invites the user to bridge the gap between experience and memory through writing at random moments. In this project, I designed the goals, definitions, and branding of the product, as well as the application through which moments are collected, and the printed journal sent to the user at the end of the writing period, serving as a time capsule that encapsulates the essence of a chapter.\n' +
-            '<br/><br/>' +
-            'To bring the product to life, I developed an Android app that allowed users to directly experience the concept. Behind the scenes, I used Python to automatically convert user input into a pre-designed page layout of the journal. I also developed two additional programs to showcase the project in different ways. The first program creates a "wow factor" by instantly printing the user\'s just-written moment on a nearby printer. The second acts as a digital time capsule, emailing the same content to the user a few days later.'
+        engDescription: 'Everyday Moments is a product that invites the user to bridge the gap between experience and memory by writing at random moments. In this project, I designed the goals, definitions, and branding of the product, as well as the application through which moments are collected, and the printed journal sent to the user at the end of the writing period, serving as a time capsule that encapsulates the essence of a chapter.\n' +
+            '<br/>' +
+            'To actualize the product, I developed an Android app letting users experience the concept. Behind the scenes, I used Python to automatically convert user input into a pre-designed page layout of the journal. In addition, I developed two programs to showcase the project. The first program aims to create a "wow factor" by instantly printing the user\'s just-written moment on a nearby printer. The second acts as a digital time capsule, emailing the same content to the user a few days later.'
             + '<br/><br/>' +
-            'For those interested in the technical details, the project\'s source code is available on this GitHub repo.',
+            'For technical details, check out the project\'s source code.',
         hebTitle: 'רגעי חולין',
         engTitle: 'Everyday Moments',
         hebTags: [ "רב-תחומי", "קוד", "UI/UX", "אישי", "פרינט", "מיתוג"],
-        engTags: ["Interdisciplinary", "Code", "UI/UX", "Personal", "Print", "Branding"]
+        engTags: ["Interdisciplinary", "Code", "UI/UX", "Personal", "Print", "Branding"],
+        images: generateProjectImages(3, 8)
     },
     '2-3': {
         index: 4, name: 'Footprints', thumbnailPath: p4Thumbnail,
-        hebDescription: 'פתיח לסדרת טבע תיעודית בשם <strong>Footprints</strong> העוסקת בהשתלטות האדם, והטכנולוגיה שהוא יוצר, על הטבע. <br/>הוידאו מורכב משתי שכבות. הראשונה היא שכבה טבעית המצולמת בים המלח, שמייצג את המוות של עולם החי והצומח. השכבה השניה היא שכבה גרפית שמתייחסת לצורות טבעיות, אך נוצרה בצורה אוטומטית באמצעות קוד פייתון, כך שהמבנה תוכנן מראש אך התוצאה הספציפית היא תוצר אוטומטי של ערכים רנדומליים.',
-        engDescription: 'An introduction to a documentary series exploring human dominance, and the technology they create, over nature. The video consists of two layers. The first is a natural layer filmed at the Dead Sea, representing the death of flora and fauna. The second layer is a graphic one that references natural forms but was created automatically using Python code, so that while the structure was planned in advance, the specific result is an automatic product of random values.',
+        hebDescription: 'פתיח לסדרת טבע תיעודית בשם <strong>Footprints</strong> העוסקת בהשתלטות האדם, והטכנולוגיה שהוא יוצר, על הטבע. <br/>הוידאו מורכב משתי שכבות. הראשונה היא שכבה טבעית המצולמת בים המלח, שמייצג את המוות של עולם החי והצומח. השכבה השניה היא שכבה גרפית שמתייחסת לצורות טבעיות, אך נוצרה בצורה אוטומטית באמצעות קוד פייתון, כך שהמבנה תוכנן מראש אך התוצאה הספציפית היא תוצר אוטומטי של ערכים רנדומליים. <br/><br/><a href="https://www.youtube.com/watch?v=08q-WL1bmcA&t=4s">לסרטון המלא</a> בYoutube.',
+        engDescription: 'An introduction to a documentary series exploring human dominance, and the technology they create, over nature. The video consists of two layers. The first is a natural layer filmed at the Dead Sea, representing the death of flora and fauna. The second layer is a graphic one that references natural forms but was created automatically using Python code, so that while the structure was planned in advance, the specific result is an automatic product of random values. <br/><br/><a href="https://www.youtube.com/watch?v=08q-WL1bmcA&t=4s">Full video</a> on Youtube.',
         hebTitle: 'Footprints',
         engTitle: 'Footprints',
         hebTags: [ "רב-תחומי", "קוד", "וידאו"],
-        engTags: ["Interdisciplinary", "Code", "Video"]
+        engTags: ["Interdisciplinary", "Code", "Video"],
+        images: generateProjectImages(4, 5),
+        cinematicPopup: true
     },
     '2-4': {
         index: 5, name: 'Trigger it', thumbnailPath: p5Thumbnail,
@@ -63,7 +81,8 @@ const projectsDataMap = {
         hebTitle: 'Trigger it',
         engTitle: 'Trigger it',
         hebTags: [ "UI/UX", "לימודי", "תרבותי", "קוד"],
-        engTags: ["UI/UX", "Educational", "Cultural", "Code"]
+        engTags: ["UI/UX", "Educational", "Cultural", "Code"],
+        images: generateProjectImages(5, 6)
     },
     '2-5': {
         index: 6, name: 'המשביר לצרכן', thumbnailPath: p6Thumbnail,
@@ -72,7 +91,8 @@ const projectsDataMap = {
         hebTitle: 'המשביר לצרכן',
         engTitle: 'Hamashbir TBD', // todo translate
         hebTags: [ "פרינט", "תרבותי", "מיתוג"],
-        engTags: ["Print", "Cultural", "Branding"] // todo brand or branding?
+        engTags: ["Print", "Cultural", "Branding"], // todo brand or branding?
+        images: generateProjectImages(6, 5)
     },
     '3-3': {
         index: 7, name: 'נוסטלגיה וכו׳', thumbnailPath: p7Thumbnail,
@@ -81,7 +101,8 @@ const projectsDataMap = {
         hebTitle: 'נוסטלגיה וכו׳',
         engTitle: 'Nostalgia TBD', // todo translate
         hebTags: [ "קולאז׳", "צילום", "אישי"],
-        engTags: ["Collage", "Photography","Personal"]
+        engTags: ["Collage", "Photography","Personal"],
+        images: generateProjectImages(7, 10)
     },
     '3-4': {
         index: 8, name: 'אופנת הקיבוץ', thumbnailPath: p8Thumbnail,
@@ -90,7 +111,8 @@ const projectsDataMap = {
         hebTitle: 'אופנת הקיבוץ',
         engTitle: 'The Kibbutz Fashion', // todo translate
         hebTags: [ "תרבותי", "פרינט", "אישי"],
-        engTags: ["Cultural", "Print", "Personal"]
+        engTags: ["Cultural", "Print", "Personal"],
+        images: generateProjectImages(8, 10)
     },
 };
 

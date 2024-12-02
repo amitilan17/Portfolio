@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styles from './App.module.css';
 import Grid from './components/Grid/Grid.js';
 import Popup from "./components/Popup/Popup";
-
+import './App.css';
 
 const App = () => {
     const [activeCell, setActiveCell] = useState(null);
