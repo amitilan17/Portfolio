@@ -124,6 +124,11 @@
     color: #0E1EB0;
 }
 
+.aboutTextHeb a {
+    color: inherit;
+    text-decoration: underline;
+}
+
 .aboutTextEng {
     width: 50%;
     margin-bottom: 30px;
@@ -133,6 +138,11 @@
     font-family: "Narkiss Block", sans-serif;
     margin-left: auto;
     color: #0E1EB0;
+}
+
+.aboutTextEng a {
+    color: inherit;
+    text-decoration: underline;
 }
 
 .aboutMeFlexContainer {

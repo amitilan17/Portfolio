@@ -24,8 +24,12 @@ const projectsDataMap = {
     '1-2': {
         index: 1,
         thumbnailPath: p1Thumbnail,
-        hebDescription: 'קולאז׳ וידאו בשני רבדים חיצוניים: טקסט ודימוי, ובשני רבדים פנימיים: אישי וקולקטיבי. דרך ההקבלה וההפרדה בין הקטן, הפרטי, הספציפי לבין הגדול, הגלובלי, המונומנטלי, הסרט הקצר מנסה לענות על השאלה:<strong>האם אפשר לתפוס את קץ האנושות?</strong>',
-        engDescription: 'Video collage in two external layers: text and image, and in two internal layers: the personal and the collective. Through the parallelism and separation between the small, private, specific aspects and the large, global, monumental aspects, the short film tries to answer the question: <strong>Is it possible to grasp the end of humanity?</strong>',
+        hebDescription: 'קולאז׳ וידאו בשני רבדים חיצוניים: טקסט ודימוי, ובשני רבדים פנימיים: אישי וקולקטיבי. דרך ההקבלה וההפרדה בין הקטן, הפרטי, הספציפי לבין הגדול, הגלובלי, המונומנטלי, הסרט הקצר מנסה לענות על השאלה:<strong>האם אפשר לתפוס את קץ האנושות?</strong>' +
+            '<br/><br/>' +
+            'לצפייה <a href="https://www.youtube.com/watch?v=Rb_umTDsRCw&t=102s" target="_blank">בעבודה המלאה</a>.',
+        engDescription: 'Video collage in two external layers: text and image, and in two internal layers: the personal and the collective. Through the parallelism and separation between the small, private, specific aspects and the large, global, monumental aspects, the short film tries to answer the question: <strong>Is it possible to grasp the end of humanity?</strong>' +
+            '<br/><br/>' +
+            'Watch the <a href="https://www.youtube.com/watch?v=Rb_umTDsRCw&t=102s" target="_blank">full video</a>.',
         hebTitle: "צלקת",
         engTitle: "Scar",
         hebTags: ["וידאו", "רב-תחומי", "אישי", "קולאז׳"],
@@ -49,25 +53,25 @@ const projectsDataMap = {
         thumbnailPath: p3Thumbnail,
         hebDescription: '<strong>רגעי חולין</strong> הוא מוצר אינטראקטיבי המזמין את המשתמש לגשר מעט על הפער בין חוויה לזכרון, דרך כתיבה ברגעים אקראיים. במסגרת הפרוייקט עיצבתי את המטרות, ההגדרות והמיתוג של המוצר, את האפליקציה שדרכה מתבצע איסוף הרגעים, ואת היומן המודפס שנשלח אל המשתמש בתום הכתיבה ומשמש כקפסולת זמן האוצרת בתוכה הוויה של תקופה.' +
             '<br/><br/>' +
-            'במסגרת הפרוייקט פיתחתי אפליקציית אנדרואיד שאיפשרה לחוות את המוצר. מבחינת backend, העיבוד של המידע מהיוזר לפורמט מעוצב של עמוד ביומן נעשה בצורה אוטומטית בפייתון. כמו כן, פיתחתי שתי תכניות ששירתו שתי פרזנטציות שונות של הפרוייקט: האחת שולחת להדפסה במדפסת סמוכה את הרגע שזה עתה נכתב באפליקציה, כדי לייצר ״אפקט וואו״. השניה שולחת את אותו הקובץ למייל כעבור מספר ימים, ומטרתה לייצר את האפקט של קפסולת זמן.<br/><br/> ניתן לצפות בrepo של הפרוייקט בגיטהאב.',
+            'במסגרת הפרוייקט פיתחתי אפליקציית אנדרואיד שאיפשרה לחוות את המוצר. מבחינת backend, העיבוד של המידע מהיוזר לפורמט מעוצב של עמוד ביומן נעשה בצורה אוטומטית בפייתון. כמו כן, פיתחתי שתי תכניות ששירתו שתי פרזנטציות שונות של הפרוייקט: האחת שולחת להדפסה במדפסת סמוכה את הרגע שזה עתה נכתב באפליקציה, כדי לייצר ״אפקט וואו״. השניה שולחת את אותו הקובץ למייל כעבור מספר ימים, ומטרתה לייצר את האפקט של קפסולת זמן.<br/><br/> ניתן לצפות <a target="_blank" href="https://github.com/amitilan17/random-moments">בrepo של הפרוייקט</a> בגיטהאב.',
         engDescription: 'Everyday Moments is a product that invites the user to bridge the gap between experience and memory by writing at random moments. In this project, I designed the goals, definitions, and branding of the product, as well as the application through which moments are collected, and the printed journal sent to the user at the end of the writing period, serving as a time capsule that encapsulates the essence of a chapter.\n' +
             '<br/>' +
             'To actualize the product, I developed an Android app letting users experience the concept. Behind the scenes, I used Python to automatically convert user input into a pre-designed page layout of the journal. In addition, I developed two programs to showcase the project. The first program aims to create a "wow factor" by instantly printing the user\'s just-written moment on a nearby printer. The second acts as a digital time capsule, emailing the same content to the user a few days later.'
             + '<br/><br/>' +
-            'For technical details, check out the project\'s source code.',
+            'For technical details, check out the project\'s <a href="https://github.com/amitilan17/random-moments" target="_blank">source code</a>.',
         hebTitle: 'רגעי חולין',
         engTitle: 'Everyday Moments',
-        hebTags: [ "רב-תחומי", "קוד", "UI/UX", "אישי", "פרינט", "מיתוג"],
+        hebTags: ["רב-תחומי", "קוד", "UI/UX", "אישי", "פרינט", "מיתוג"],
         engTags: ["Interdisciplinary", "Code", "UI/UX", "Personal", "Print", "Branding"],
         images: generateProjectImages(3, 8)
     },
     '2-3': {
         index: 4, name: 'Footprints', thumbnailPath: p4Thumbnail,
-        hebDescription: 'פתיח לסדרת טבע תיעודית בשם <strong>Footprints</strong> העוסקת בהשתלטות האדם, והטכנולוגיה שהוא יוצר, על הטבע. <br/>הוידאו מורכב משתי שכבות. הראשונה היא שכבה טבעית המצולמת בים המלח, שמייצג את המוות של עולם החי והצומח. השכבה השניה היא שכבה גרפית שמתייחסת לצורות טבעיות, אך נוצרה בצורה אוטומטית באמצעות קוד פייתון, כך שהמבנה תוכנן מראש אך התוצאה הספציפית היא תוצר אוטומטי של ערכים רנדומליים. <br/><br/><a href="https://www.youtube.com/watch?v=08q-WL1bmcA&t=4s">לסרטון המלא</a> בYoutube.',
-        engDescription: 'An introduction to a documentary series exploring human dominance, and the technology they create, over nature. The video consists of two layers. The first is a natural layer filmed at the Dead Sea, representing the death of flora and fauna. The second layer is a graphic one that references natural forms but was created automatically using Python code, so that while the structure was planned in advance, the specific result is an automatic product of random values. <br/><br/><a href="https://www.youtube.com/watch?v=08q-WL1bmcA&t=4s">Full video</a> on Youtube.',
+        hebDescription: 'פתיח לסדרת טבע תיעודית בשם <strong>Footprints</strong> העוסקת בהשתלטות האדם, והטכנולוגיה שהוא יוצר, על הטבע. <br/>הוידאו מורכב משתי שכבות. הראשונה היא שכבה טבעית המצולמת בים המלח, שמייצג את המוות של עולם החי והצומח. השכבה השניה היא שכבה גרפית שמתייחסת לצורות טבעיות, אך נוצרה בצורה אוטומטית באמצעות קוד פייתון, כך שהמבנה תוכנן מראש אך התוצאה הספציפית היא תוצר אוטומטי של ערכים רנדומליים. <br/><br/>לצפייה <a target="_blank" href="https://www.youtube.com/watch?v=08q-WL1bmcA&t=4s">בעבודה המלאה</a>.',
+        engDescription: 'An introduction to a documentary series exploring human dominance, and the technology they create, over nature. The video consists of two layers. The first is a natural layer filmed at the Dead Sea, representing the death of flora and fauna. The second layer is a graphic one that references natural forms but was created automatically using Python code, so that while the structure was planned in advance, the specific result is an automatic product of random values. <br/><br/>Watch the <a href="https://www.youtube.com/watch?v=08q-WL1bmcA&t=4s" target="_blank">full video</a>.',
         hebTitle: 'Footprints',
         engTitle: 'Footprints',
-        hebTags: [ "רב-תחומי", "קוד", "וידאו"],
+        hebTags: ["רב-תחומי", "קוד", "וידאו"],
         engTags: ["Interdisciplinary", "Code", "Video"],
         images: generateProjectImages(4, 5),
         cinematicPopup: true
@@ -80,7 +84,7 @@ const projectsDataMap = {
         engDescription: 'A programming-based visual effects application that introduces teenagers to coding through their sphere of interests and relevant objectives. <br/><br/>Built on modular components, the application facilitates the creation of unique combinations through both pre-defined and custom options, accommodating various complexity levels. <br/><br/>Acknowledging the critical role of digital literacy and fundamental programming capabilities in our evolving digital landscape, the application emphasizes a comprehensive learning journey. It cultivates learning motivation through creative expression, individual articulation, and project-based learning methodology.',
         hebTitle: 'Trigger it',
         engTitle: 'Trigger it',
-        hebTags: [ "UI/UX", "לימודי", "תרבותי", "קוד"],
+        hebTags: ["UI/UX", "לימודי", "תרבותי", "קוד"],
         engTags: ["UI/UX", "Educational", "Cultural", "Code"],
         images: generateProjectImages(5, 6)
     },
@@ -91,7 +95,7 @@ const projectsDataMap = {
         engDescription: 'A visual identity for a new institution: A municipal archive opening in the historic <strong>Hamashbir Lezarchan</strong> building in Jerusalem. As part of the project, I designed a logo and posters for the opening event. The graphic language draws inspiration from the building\'s structure and window angles, while giving a subtle nod to its original purpose in the retail sector.',
         hebTitle: 'ארכיון המשביר',
         engTitle: 'The Mashbir Archive',
-        hebTags: [ "פרינט", "תרבותי", "מיתוג"],
+        hebTags: ["פרינט", "תרבותי", "מיתוג"],
         engTags: ["Print", "Cultural", "Branding"],
         images: generateProjectImages(6, 5)
     },
@@ -102,8 +106,8 @@ const projectsDataMap = {
         engDescription: '<i>"I miss the time we were students in Jerusalem,"</i> I wrote while still being a student in Jerusalem, at the end of my third year out of five. This project explores nostalgia and the spaces I inhabit, inspired by Georges Perec\'s <strong>Species of Spaces</strong> and incorporating passages from it. <br/><br/>Using an analog film camera, I captured the house where I lived—a place I deeply cherished, along with everything it represented—feeling nostalgic for it even while still residing there. The choice of analog photography naturally emphasized the nostalgic quality of my observation of the house. The collage of text passages combined with the photographs expresses my thoughts and feelings about Perec\'s observations.',
         hebTitle: 'נוסטלגיה וכו׳',
         engTitle: 'Nostalgia and Other Pieces',
-        hebTags: [ "קולאז׳", "צילום", "אישי"],
-        engTags: ["Collage", "Photography","Personal"],
+        hebTags: ["קולאז׳", "צילום", "אישי"],
+        engTags: ["Collage", "Photography", "Personal"],
         images: generateProjectImages(7, 10)
     },
     '3-4': {
@@ -113,7 +117,7 @@ const projectsDataMap = {
         engDescription: 'In this project, I edited the Wikipedia article <strong>Fashion in the Kibbutz</strong> alongside a collection of family photographs from the 1970s, documenting my father\'s childhood in Kibbutz Rosh HaNikra, into a fashion catalog that captures kibbutz fashion and life of that era. As Yoram Kaniuk aptly describes, and as quoted at the end of the booklet: <i>"Fashion is not merely a swimwear show... it is the collective higher self of the body, of society, it is how people wish to be carved into the landscape."</i>',
         hebTitle: 'אופנת הקיבוץ',
         engTitle: 'Kibbutz Fashion',
-        hebTags: [ "תרבותי", "פרינט", "אישי"],
+        hebTags: ["תרבותי", "פרינט", "אישי"],
         engTags: ["Cultural", "Print", "Personal"],
         images: generateProjectImages(8, 10)
     },
