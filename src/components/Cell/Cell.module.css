@@ -90,7 +90,7 @@
 .projectName {
     color: #0E1EB0;
     opacity: 1;
-    transition: color 0.3s ease; /* todo return? opacity 0.8s ease;*/
+    transition: color 0.3s ease;
 }
 
 /* On cell hover, change text color */
