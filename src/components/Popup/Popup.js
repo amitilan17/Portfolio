@@ -1,8 +1,6 @@
 import styles from "./Popup.module.css";
 import sharedStyles from "../../styles/sharedStyles.module.css";
 import React, {useState} from "react";
-import p2Thumbnail from '../../assets/thumbnails/p2_thumbnail.jpg';
-import p3Thumbnail from '../../assets/thumbnails/p3_thumbnail.jpg';
 import closeIcon from '../../assets/ic/ic_close.svg';
 import leftArrowIcon from '../../assets/ic/ic_left_arrow.svg';
 import rightArrowIcon from '../../assets/ic/ic_right_arrow.svg';
