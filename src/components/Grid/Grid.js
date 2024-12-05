@@ -2,7 +2,7 @@ import React from 'react';
 import Cell from '../Cell/Cell.js';
 import AboutCell from '../Cell/AboutCell';
 import styles from "./Grid.module.css";
-import {aboutCellKey, getCellKey} from "../../Utils";
+import {aboutCellKey, getCellKey} from "../../utils/Utils";
 
 
 const Grid = ({grid, onCellClick, onToggleAboutCell, isAboutCellOpen, isHeb}) => (

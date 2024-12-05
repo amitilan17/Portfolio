@@ -11,7 +11,7 @@
 
 @font-face {
     font-family: 'Copernicus';
-    src: url('./assets/fonts/CopernicusTrial-Bold-BF6616045097aac.ttf') format('woff2');
+    src: url('../assets/fonts/CopernicusTrial-Bold-BF6616045097aac.ttf') format('woff2');
     font-weight: bold;
     font-style: normal;
 }
@@ -22,7 +22,7 @@ body {
 
 @font-face {
     font-family: 'David Libre';
-    src: url('./assets/fonts/DavidLibre-Regular.ttf') format('woff2');
+    src: url('../assets/fonts/DavidLibre-Regular.ttf') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
@@ -33,7 +33,7 @@ body {
 
 @font-face {
     font-family: 'David Libre';
-    src: url('./assets/fonts/DavidLibre-Bold.ttf') format('woff2');
+    src: url('../assets/fonts/DavidLibre-Bold.ttf') format('woff2');
     font-weight: bold;
     font-style: normal;
 }
@@ -45,7 +45,7 @@ body {
 
 @font-face {
     font-family: 'Narkiss Block';
-    src: url('./assets/fonts/NarkissBlock-Light-TRIAL.otf') format('woff2');
+    src: url('../assets/fonts/NarkissBlock-Light-TRIAL.otf') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
@@ -56,7 +56,7 @@ body {
 
 @font-face {
     font-family: 'Narkiss Block';
-    src: url('./assets/fonts/NarkissBlock-Semibold-TRIAL.otf') format('woff2');
+    src: url('../assets/fonts/NarkissBlock-Semibold-TRIAL.otf') format('woff2');
     font-weight: bold;
     font-style: normal;
 }
@@ -67,7 +67,7 @@ body {
 
 @font-face {
     font-family: 'Brown';
-    src: url('./assets/fonts/Brown-Light.ttf') format('woff2');
+    src: url('../assets/fonts/Brown-Light.ttf') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
@@ -78,7 +78,7 @@ body {
 
 @font-face {
     font-family: 'Brown';
-    src: url('./assets/fonts/Brown-Bold.ttf') format('woff2');
+    src: url('../assets/fonts/Brown-Bold.ttf') format('woff2');
     font-weight: bold;
     font-style: normal;
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import projectsDataMap from '../../data/projectsData.js';
 import styles from "./Cell.module.css";
-import {getCellKey} from '../../Utils.js';
+import {getCellKey} from '../../utils/Utils.js';
 
 const Cell = ({cell, onClick, isAboutCellOpen, isHeb}) => {
     const cellKey = getCellKey(cell);
