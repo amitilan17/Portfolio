@@ -1,7 +1,7 @@
 import styles from "./Cell.module.css";
 import sharedStyles from "../../styles/sharedStyles.module.css";
 import React from "react";
-import closeIcon from "../../assets/ic_close.svg";
+import closeIcon from "../../assets/ic/ic_close.svg";
 
 const aboutMeTextHeb = "שמי עמית אילן, אני מפתחת תוכנה ומעצבת גרפית. בוגרת תואר ראשון במדעי המחשב בהצטיינות מ<strong>האוניברסיטה העברית</strong> ותואר ראשון בתקשורת חזותית מ<strong>האקדמיה לעיצוב בצלאל</strong>.<br/>" +
     "אני אוהבת לתכנן וליצור מערכות ומוצרים סקיילבילים, קוהרנטיים ונגישים למשתמש, הן מההיבט העיצובי והן מההיבט הפיתוחי, אבל בעיקר מההיבט של מהות המוצר ומטרתו, דיוקו והעברת המסר." +
