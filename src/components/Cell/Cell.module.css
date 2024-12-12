@@ -59,6 +59,7 @@
     height: 100%;
     position: relative;
     z-index: 2; /* Place content on top of the image and shade */
+    padding-right: 20px;
 }
 
 .projectIndex {
@@ -67,7 +68,9 @@
     font-weight: bold;
     line-height: 1;
     margin-right: 10px; /* Space between index and name */
-    font-size: 70px;
+    font-size: clamp(50px, 4.5vw + 9.5px, 70px);
+    /* Compensate for internal padding that scales with font size */
+    margin-bottom: calc((clamp(50px, 4.5vw + 9.5px, 70px) - 70px) * -0.25);
 }
 
 .projectName {
@@ -103,6 +106,7 @@
 
 .aboutCell {
     grid-row: span 2;
+    padding-right: 20px;
 }
 
 .aboutCellContent {
@@ -149,11 +153,12 @@
     display: flex;
     justify-content: flex-start;
     align-items: baseline;
+    flex-wrap: wrap;
+    gap: 6px;
 }
 
 .aboutMeButton{
     white-space: nowrap; /* Ensure "About Me" stays on one line */
-    margin-left: 6px;
     cursor: pointer;
 }
 
