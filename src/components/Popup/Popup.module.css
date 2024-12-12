@@ -16,27 +16,13 @@
     background-color: white;
     border-radius: 0;
     border: 1px solid #0E1EB0;
-    width: 75%;
+    width: 75%; /* changes with window's max width */
     height: 80vh;
     margin: auto;
     transition: width 0.3s ease-in-out;
     z-index: 4;
 }
 
-@media (max-width:1500px) {
-    .popupContent {
-        width: 78%;
-    }
-}
-@media (max-width:1200px) {
-    .popupContent {
-        width: 85%;
-    }
-}@media (max-width:1000px) {
-    .popupContent {
-        width: 89%;
-    }
-}
 .popupLeft {
     width: 55%;
     position: relative;
@@ -48,6 +34,23 @@
     display: flex;
     flex-direction: column;
     padding: 40px;
+}
+
+/* When window is very narrow, hide the left part */
+@media (max-width: 600px) {
+    .popupLeft {
+        display: none;
+    }
+    .popupRight {
+        width: 100%;
+        position: relative;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .popupContent {
+        width: 100%;
+    }
 }
 
 /* ========= Left side ========= */
@@ -156,7 +159,7 @@
 
 .popupInfo {
     height: 100%;
-    padding: 10px 40px 10px 40px;
+    padding: 10px 35px 10px 35px; /* padding left,right changes with window's max width*/
     font-size: 14px;
     display: flex;
     flex-direction: column;
@@ -171,41 +174,48 @@
     align-self: flex-end;
 }
 
-.descriptionDiv {
+@media (max-width: 900px) {
+    .tagsDiv {
+        max-width: 93%;
+    }
+}
+
+.descriptionAndTitleDiv {
     display: flex;
     flex-direction: column;
-    margin-top: auto;
     width: 100%;
+    overflow: hidden;
+}
+
+.hebrewDescription,
+.englishDescription {
+    font-size: 14px;
+    line-height: 120%;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    overflow-y: auto; /* Make this scrollable if content is too long */
+    flex-grow: 1; /* Take up remaining space vertically */
 }
 
 .hebrewDescription {
-    margin-bottom: 30px;
-    font-size: 14px;
     text-align: right;
     font-family: "Narkiss Block", sans-serif;
     color: #0E1EB0;
 }
 
-.hebrewDescription a {
-    color: inherit;
-    text-decoration: underline;
-}
-
 .englishDescription {
-    margin-bottom: 30px;
-    font-size: 14px;
     text-align: left;
     font-family: Brown, sans-serif;
     color: #0E1EB0;
-    line-height: 120%;
 }
 
+.hebrewDescription a,
 .englishDescription a {
     color: inherit;
     text-decoration: underline;
 }
 
-.tag{
+.tag {
     height: 20px;
     line-height: 20px;
     background-color: #0E1EB0;
@@ -218,16 +228,29 @@
     font-size: 14px;
 }
 
-.hebrewTag{
+@media (max-width: 1000px) {
+    .tag {
+        font-size: 12px;
+    }
+}
+
+.hebrewTag {
     font-family: "Narkiss Block", sans-serif;
 }
 
-.englishTag{
+.englishTag {
     font-family: Brown, sans-serif;
 }
 
+.titleContainer {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
 .title {
-    margin-bottom: 30px;
+    margin-top: auto;
+    margin-bottom: 25px;
     font-size: 40px;
     font-weight: bold;
     text-align: left;
@@ -240,4 +263,64 @@
     white-space: nowrap;
     border-bottom: 1.5px dotted #0E1EB0;
     padding-bottom: 0.5px;
+}
+
+
+/* ========= Responsive behavior ========= */
+
+@media (max-width: 1400px) {
+    .popupContent {
+        width: 78%;
+    }
+
+    .popupInfo {
+        padding-left: 28px;
+        padding-right: 28px;
+    }
+
+    .title {
+        font-size: 39px;
+    }
+}
+
+@media (max-width: 1220px) {
+    .popupContent {
+        width: 85%;
+    }
+
+    .popupInfo {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .title {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 1020px) {
+    .popupContent {
+        width: 89%;
+    }
+
+    .popupInfo {
+        padding-left: 1px;
+        padding-right: 1px;
+    }
+
+    .title {
+        font-size: 33px;
+    }
+}
+
+@media (max-width: 900px) {
+    .title {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 750px) {
+    .title {
+        font-size: 25px;
+    }
 }

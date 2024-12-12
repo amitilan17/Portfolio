@@ -24,7 +24,7 @@ const Popup = ({cell, onClose, isHeb}) => {
     </div>);
 
 }
-const ImageGallery = ({ cell }) => {
+const ImageGallery = ({cell}) => {
     const [activeImageIndex, setActiveImageIndex] = useState(0);
 
     const cellKey = getCellKey(cell);
@@ -63,10 +63,10 @@ const ImageGallery = ({ cell }) => {
             )}
 
             <div className={`${styles.galleryArrow} ${styles.left}`} onClick={goToPrevImage}>
-                <img src={leftArrowIcon} alt="Left Arrow" className="arrowIcon" />
+                <img src={leftArrowIcon} alt="Left Arrow" className="arrowIcon"/>
             </div>
             <div className={`${styles.galleryArrow} ${styles.right}`} onClick={goToNextImage}>
-                <img src={rightArrowIcon} alt="Right Arrow" className="arrowIcon" />
+                <img src={rightArrowIcon} alt="Right Arrow" className="arrowIcon"/>
             </div>
 
             <div className={styles.galleryDots}>
@@ -87,22 +87,24 @@ const ProjectDetails = ({cell, isHeb}) => {
     const hebDescription = projectDetails.hebDescription;
     const engDescription = projectDetails.engDescription;
     const title = isHeb ? projectDetails.hebTitle : projectDetails.engTitle;
-    const tags = isHeb ? projectDetails.hebTags: projectDetails.engTags;
-    const tagsStyle = isHeb ? styles.hebrewTag: styles.englishTag;
+    const tags = isHeb ? projectDetails.hebTags : projectDetails.engTags;
+    const tagsStyle = isHeb ? styles.hebrewTag : styles.englishTag;
     return (
         <div className={styles.popupInfo}>
             <div className={styles.tagsDiv}>
                 {tags.map((tag) =>
                     <div className={`${styles.tag} ${tagsStyle}`}>{tag}</div>)}
             </div>
-            <div className={styles.descriptionDiv}>
+            <div className={styles.descriptionAndTitleDiv}>
                 {isHeb ? (<div className={styles.hebrewDescription} dir="rtl"
                                dangerouslySetInnerHTML={{__html: hebDescription}}/>)
                     : (<div className={styles.englishDescription}
                             dangerouslySetInnerHTML={{__html: engDescription}}/>)
                 }
-                <div className={styles.title} dir="rtl">
-                    <span className={styles.titleSpan}>{title}</span>
+                <div className={styles.titleContainer}>
+                    <div className={styles.title} dir="rtl">
+                        <span className={styles.titleSpan}>{title}</span>
+                    </div>
                 </div>
             </div>
         </div>
