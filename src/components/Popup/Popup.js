@@ -101,8 +101,8 @@ const ProjectDetails = ({cell, isHeb}) => {
                     : (<div className={styles.englishDescription}
                             dangerouslySetInnerHTML={{__html: engDescription}}/>)
                 }
-                <div className={styles.titleDescription} dir="rtl">
-                    <span className={styles.titleText}>{title}</span>
+                <div className={styles.title} dir="rtl">
+                    <span className={styles.titleSpan}>{title}</span>
                 </div>
             </div>
         </div>
