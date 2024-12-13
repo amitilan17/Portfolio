@@ -106,19 +106,30 @@
 
 .aboutCell {
     grid-row: span 2;
-    padding-right: 20px;
 }
 
 .aboutCellContent {
     display: flex;
-    align-items: flex-end;
+    flex-direction: row;
     height: 100%;
     width: 100%;
-    position: relative;
+}
+
+.aboutCloseButtonContainer {
+    background: none;
+    border: none;
+    display: flex;
+    padding: 0;
+}
+
+.aboutCloseButton {
+    cursor: pointer;
+    z-index: 5;
 }
 
 .aboutTextHeb {
-    padding: 50px;
+    padding-top: 50px;
+    padding-right: 30px;
     width: 50%;
     margin-bottom: 30px;
     font-size: 14px;
@@ -133,13 +144,21 @@
     text-decoration: underline;
 }
 
+@media (max-width: 1100px) {
+    .aboutTextHeb {
+        width: 60%;
+    }
+}
+
 .aboutTextEng {
+    padding-top: 50px;
+    padding-right: 110px;
     width: 50%;
     margin-bottom: 30px;
-    margin-right: 100px;
     font-size: 14px;
     text-align: left;
-    font-family: "Narkiss Block", sans-serif;
+    font-family: Brown, sans-serif;
+    line-height: 130%;
     margin-left: auto;
     color: #0E1EB0;
 }
@@ -148,8 +167,20 @@
     color: inherit;
     text-decoration: underline;
 }
+@media (max-width: 1200px) {
+    .aboutTextEng {
+        width: 65%;
+        padding-right: 0px;
+    }
+}
 
-.aboutMeFlexContainer {
+.nameAndButtonContainer {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+}
+
+.nameAndButtonSecondRow {
     display: flex;
     justify-content: flex-start;
     align-items: baseline;
@@ -160,6 +191,7 @@
 .aboutMeButton{
     white-space: nowrap; /* Ensure "About Me" stays on one line */
     cursor: pointer;
+    margin-right: 18px;
 }
 
 .aboutCellOpen {

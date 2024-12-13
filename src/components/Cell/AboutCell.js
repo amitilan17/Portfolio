@@ -33,18 +33,11 @@ const AboutCell = ({cell, onToggleAboutCell, isOpen, isHeb}) => {
              }}
         >
             <div className={styles.aboutCellContent}>
-                <div>
-                    {isOpen &&
-                        (isHeb ? (<div className={styles.aboutTextHeb} dir="rtl"
-                                       dangerouslySetInnerHTML={{__html: aboutMeTextHeb}}/>)
-                                : (<div className={styles.aboutTextEng}
-                                        dangerouslySetInnerHTML={{__html: aboutMeTextEng}}/>)
-                        )
-                    }
+                <div className={styles.nameAndButtonContainer}>
                     <div className={styles.projectIndex}>
                         Amit
                     </div>
-                    <div className={styles.aboutMeFlexContainer}>
+                    <div className={styles.nameAndButtonSecondRow}>
                         <div className={styles.projectIndex}>
                             Ilan
                         </div>
@@ -56,11 +49,20 @@ const AboutCell = ({cell, onToggleAboutCell, isOpen, isHeb}) => {
                         </div>
                     </div>
                 </div>
-                <div>
-                    {isOpen && <button className={sharedStyles.closeButton} onClick={() => onToggleAboutCell(false)}>
-                        <img src={closeIcon} alt="Close" className={sharedStyles.closeButton}/>
-                    </button>}
-                </div>
+
+                {isOpen &&
+                    (isHeb ? (<div className={styles.aboutTextHeb} dir="rtl"
+                                   dangerouslySetInnerHTML={{__html: aboutMeTextHeb}}/>)
+                            : (<div className={styles.aboutTextEng}
+                                    dangerouslySetInnerHTML={{__html: aboutMeTextEng}}/>)
+                    )
+                }
+
+                {isOpen &&
+                    <button className={styles.aboutCloseButtonContainer} onClick={() => onToggleAboutCell(false)}>
+                        <img src={closeIcon} alt="Close" className={styles.aboutCloseButton}/>
+                    </button>
+                }
             </div>
         </div>
     );
