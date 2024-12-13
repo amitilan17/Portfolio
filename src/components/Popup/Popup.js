@@ -62,12 +62,16 @@ const ImageGallery = ({cell}) => {
                 />
             )}
 
-            <div className={`${styles.galleryArrow} ${styles.left}`} onClick={goToPrevImage}>
-                <img src={leftArrowIcon} alt="Left Arrow" className="arrowIcon"/>
-            </div>
-            <div className={`${styles.galleryArrow} ${styles.right}`} onClick={goToNextImage}>
-                <img src={rightArrowIcon} alt="Right Arrow" className="arrowIcon"/>
-            </div>
+            <GalleryArrow
+                direction="left"
+                onClick={goToPrevImage}
+                icon={leftArrowIcon}
+            />
+            <GalleryArrow
+                direction="right"
+                onClick={goToNextImage}
+                icon={rightArrowIcon}
+            />
 
             <div className={styles.galleryDots}>
                 {images.map((_, index) => (
@@ -82,18 +86,25 @@ const ImageGallery = ({cell}) => {
     );
 };
 
+const GalleryArrow = ({ direction, onClick, icon }) => (
+    <div className={`${styles.galleryArrow} ${styles[direction]}`} onClick={onClick}>
+        <img src={icon} alt={`${direction} Arrow`} className="arrowIcon"/>
+    </div>
+);
+
 const ProjectDetails = ({cell, isHeb}) => {
-    const projectDetails = projectsDataMap[getCellKey(cell)];
-    const hebDescription = projectDetails.hebDescription;
-    const engDescription = projectDetails.engDescription;
-    const title = isHeb ? projectDetails.hebTitle : projectDetails.engTitle;
-    const tags = isHeb ? projectDetails.hebTags : projectDetails.engTags;
+    const { hebDescription, engDescription, hebTitle, engTitle, hebTags, engTags } = projectsDataMap[getCellKey(cell)];
+    const title = isHeb ? hebTitle : engTitle;
+    const tags = isHeb ? hebTags : engTags;
     const tagsStyle = isHeb ? styles.hebrewTag : styles.englishTag;
     return (
         <div className={styles.popupInfo}>
             <div className={styles.tagsDiv}>
-                {tags.map((tag) =>
-                    <div className={`${styles.tag} ${tagsStyle}`}>{tag}</div>)}
+                {tags.map((tag, index) => (
+                    <div key={`${tag}-${index}`} className={`${styles.tag} ${tagsStyle}`}>
+                        {tag}
+                    </div>
+                ))}
             </div>
             <div className={styles.descriptionAndTitleDiv}>
                 {isHeb ? (<div className={styles.hebrewDescription} dir="rtl"

@@ -1,15 +1,22 @@
+/* Base cell styles */
 .cell {
-    border: 0.5px solid #0E1EB0;
+    position: relative;
     display: flex;
     flex-direction: column;
-    background-color: #f0f0f0;
-    transition: background-color 0.3s;
-    text-align: center;
     padding-left: 20px;
-    position: relative;
+    background-color: #f0f0f0;
+    border: 0.5px solid #0E1EB0;
     overflow: hidden;
+    text-align: center;
+    transition: background-color 0.3s;
 }
 
+/* Project cell specific styles */
+.projectCell {
+    cursor: pointer;
+}
+
+/* Project thumbnail styles */
 .projectThumbnail {
     position: absolute;
     top: 0;
@@ -17,23 +24,18 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0; /* Initially hidden */
-    z-index: 0; /* Behind the content and shade */
+    opacity: 0;
+    z-index: 0;
     transform: scale(1);
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.projectCell {
-    cursor: pointer;
-}
-
-/* On cell hover, show thumbnail */
 .projectCell:hover .projectThumbnail {
     opacity: 1;
     transform: scale(1.1);
 }
 
-/* Define cell shade */
+/* Gradient overlay */
 .projectCell::before {
     content: '';
     position: absolute;
@@ -42,53 +44,53 @@
     width: 100%;
     height: 100%;
     background: radial-gradient(circle at bottom left, rgba(14, 30, 176, 0.35) 0%, rgba(0, 0, 0, 0) 35%);
-    opacity: 0; /* Initially hidden */
+    opacity: 0;
     transition: opacity 0.3s ease;
-    z-index: 1; /* Positioned behind text but above image */
+    z-index: 1;
 }
 
-/* On cell hover, show the shade*/
 .projectCell:hover::before {
     opacity: 1;
 }
 
+/* Content layout */
 .cellContent {
+    position: relative;
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
     height: 100%;
-    position: relative;
-    z-index: 2; /* Place content on top of the image and shade */
     padding-right: 20px;
+    z-index: 2;
 }
 
+/* Text styles */
 .projectIndex {
-    text-align: left;
     font-family: 'Copernicus', sans-serif;
+    font-size: clamp(50px, 4.5vw + 9.5px, 70px);
     font-weight: bold;
     line-height: 1;
-    margin-right: 10px; /* Space between index and name */
-    font-size: clamp(50px, 4.5vw + 9.5px, 70px);
-    /* Compensate for internal padding that scales with font size */
+    text-align: left;
+    margin-right: 10px;
     margin-bottom: calc((clamp(50px, 4.5vw + 9.5px, 70px) - 70px) * -0.25);
 }
 
 .projectName {
-    flex-grow: 1; /* Fills the remaining space */
-    text-align: left;
+    flex-grow: 1;
     font-family: 'David Libre', serif;
-    font-weight: normal;
     font-size: 16px;
+    font-weight: normal;
+    text-align: left;
     margin-bottom: 14px;
 }
 
 .projectName span {
     border-bottom: 1px dotted;
-    padding-bottom: 0.1px; /* Gap between text and underline */
-    display: inline; /* Wrap border around the text */
+    padding-bottom: 0.1px;
+    display: inline;
 }
 
-/* Shared properties */
+/* Shared text properties */
 .projectIndex,
 .projectName {
     color: #0E1EB0;
@@ -96,14 +98,12 @@
     transition: color 0.3s ease;
 }
 
-/* On cell hover, change text color */
 .projectCell:hover .projectIndex,
 .projectCell:hover .projectName {
     color: #fff;
 }
 
-/*============== About cell ==============*/
-
+/* About cell styles */
 .aboutCell {
     grid-row: span 2;
 }
@@ -115,65 +115,37 @@
     width: 100%;
 }
 
-.aboutCloseButtonContainer {
-    background: none;
-    border: none;
-    display: flex;
-    padding: 0;
-}
-
-.aboutCloseButton {
-    cursor: pointer;
-    z-index: 5;
-}
-
-.aboutTextHeb {
+/* About cell text styles */
+.aboutText--heb,
+.aboutText--eng {
     padding-top: 50px;
-    padding-right: 30px;
     width: 50%;
     margin-bottom: 30px;
-    font-size: 14px;
-    text-align: right;
-    font-family: "Narkiss Block", sans-serif;
     margin-left: auto;
+    font-size: 14px;
     color: #0E1EB0;
 }
 
-.aboutTextHeb a {
-    color: inherit;
-    text-decoration: underline;
+.aboutText--heb {
+    padding-right: 30px;
+    text-align: right;
+    font-family: "Narkiss Block", sans-serif;
 }
 
-@media (max-width: 1100px) {
-    .aboutTextHeb {
-        width: 60%;
-    }
-}
-
-.aboutTextEng {
-    padding-top: 50px;
+.aboutText--eng {
     padding-right: 110px;
-    width: 50%;
-    margin-bottom: 30px;
-    font-size: 14px;
     text-align: left;
     font-family: Brown, sans-serif;
     line-height: 130%;
-    margin-left: auto;
-    color: #0E1EB0;
 }
 
-.aboutTextEng a {
+.aboutText--heb a,
+.aboutText--eng a {
     color: inherit;
     text-decoration: underline;
 }
-@media (max-width: 1200px) {
-    .aboutTextEng {
-        width: 65%;
-        padding-right: 0px;
-    }
-}
 
+/* About cell layout components */
 .nameAndButtonContainer {
     display: flex;
     flex-direction: column;
@@ -188,23 +160,49 @@
     gap: 6px;
 }
 
-.aboutMeButton{
-    white-space: nowrap; /* Ensure "About Me" stays on one line */
+.aboutMeButton {
+    white-space: nowrap;
     cursor: pointer;
     margin-right: 18px;
 }
 
+/* About cell states */
 .aboutCellOpen {
     cursor: default;
 }
 
-/* Hide normal cell's shade on hover when about cell is open */
 .aboutCellOpen:hover::before {
     opacity: 0;
 }
 
-/* Hide normal cell's project index&name when about cell is open */
 .aboutCellOpen .projectIndex,
 .aboutCellOpen .projectName {
     opacity: 0;
+}
+
+/* Close button styles */
+.aboutCloseButtonContainer {
+    background: none;
+    border: none;
+    display: flex;
+    padding: 0;
+}
+
+.aboutCloseButton {
+    cursor: pointer;
+    z-index: 5;
+}
+
+/* Media queries */
+@media (max-width: 1200px) {
+    .aboutText--eng {
+        width: 65%;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 1100px) {
+    .aboutText--heb {
+        width: 60%;
+    }
 }

@@ -51,11 +51,13 @@ const AboutCell = ({cell, onToggleAboutCell, isOpen, isHeb}) => {
                 </div>
 
                 {isOpen &&
-                    (isHeb ? (<div className={styles.aboutTextHeb} dir="rtl"
-                                   dangerouslySetInnerHTML={{__html: aboutMeTextHeb}}/>)
-                            : (<div className={styles.aboutTextEng}
-                                    dangerouslySetInnerHTML={{__html: aboutMeTextEng}}/>)
-                    )
+                    (isHeb ? (
+                        <div className={styles['aboutText--heb']} dir="rtl"
+                             dangerouslySetInnerHTML={{__html: aboutMeTextHeb}}/>
+                    ) : (
+                        <div className={styles['aboutText--eng']}
+                             dangerouslySetInnerHTML={{__html: aboutMeTextEng}}/>
+                    ))
                 }
 
                 {isOpen &&
