@@ -223,10 +223,10 @@
 }
 
 .titleSpan {
-    display: inline-block;
-    white-space: nowrap;
+    display: inline;
     border-bottom: 1.5px dotted #0E1EB0;
     padding-bottom: 0.5px;
+    box-decoration-break: clone;
 }
 
 /* Media Queries - consolidated and organized by breakpoint */
@@ -234,9 +234,11 @@
     .popupContent {
         width: 74%;
     }
+
     .popupInfo {
         padding: 10px 28px;
     }
+
     .title {
         font-size: 39px;
     }
@@ -246,9 +248,11 @@
     .popupContent {
         width: 83%;
     }
+
     .popupInfo {
         padding: 10px 20px;
     }
+
     .title {
         font-size: 36px;
     }
@@ -258,9 +262,11 @@
     .popupContent {
         width: 88%;
     }
+
     .popupInfo {
         padding: 10px 1px;
     }
+
     .title {
         font-size: 33px;
     }
@@ -276,6 +282,7 @@
     .title {
         font-size: 30px;
     }
+
     .tagsDiv {
         max-width: 93%;
     }
@@ -291,10 +298,12 @@
     .popupLeft {
         display: none;
     }
+
     .popupRight {
         width: 100%;
         margin: 0;
     }
+
     .popupContent {
         width: 100%;
     }
