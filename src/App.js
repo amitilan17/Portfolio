@@ -6,7 +6,7 @@ import Popup from "./components/Popup/Popup";
 const App = () => {
     const [activeCell, setActiveCell] = useState(null);
     const [isAboutCellOpen, setIsAboutCellOpen] = useState(false);
-    const [isHeb, setIsHeb] = useState(false);
+    const [isHeb, setIsHeb] = useState(true);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const grid = !isAboutCellOpen ?
