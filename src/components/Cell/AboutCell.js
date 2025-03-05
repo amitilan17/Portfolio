@@ -1,5 +1,4 @@
 import styles from "./Cell.module.css";
-import sharedStyles from "../../styles/sharedStyles.module.css";
 import React from "react";
 import closeIcon from "../../assets/ic/ic_close.svg";
 
