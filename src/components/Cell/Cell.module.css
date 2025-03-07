@@ -127,7 +127,7 @@
 }
 
 .aboutText--heb {
-    padding-right: 30px;
+    padding-right: 100px;
     text-align: right;
     font-family: "Narkiss Block", sans-serif;
 }
@@ -190,6 +190,9 @@
 
 .aboutCloseButton {
     cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
     z-index: 5;
 }
 
