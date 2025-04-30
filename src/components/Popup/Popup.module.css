@@ -52,6 +52,12 @@
     object-fit: cover;
 }
 
+.imageContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
 /* Cinematic mode styles */
 .popupCinematicImageContainer {
     display: flex;
@@ -227,6 +233,40 @@
     border-bottom: 1.5px dotted #0E1EB0;
     padding-bottom: 0.5px;
     box-decoration-break: clone;
+}
+
+/* Image loading states */
+.imageLoading {
+    opacity: 0.3;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.imageLoaded {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Loading container */
+.loadingContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+/* Arrow disabled state */
+.arrowDisabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.disabledIcon {
+    filter: grayscale(100%);
 }
 
 /* Media Queries - consolidated and organized by breakpoint */

@@ -7,17 +7,7 @@ import p6Thumbnail from '../assets/thumbnails/p6_thumbnail.jpg';
 import p7Thumbnail from '../assets/thumbnails/p7_thumbnail.jpg';
 import p8Thumbnail from '../assets/thumbnails/p8_thumbnail.jpg';
 
-
-const generateProjectImages = (projectId, count) => {
-    const images = [];
-    const context = require.context('../assets/images/', true, /\.jpg$/);
-
-    for (let i = 1; i <= count; i++) {
-        const imagePath = `p${projectId}/${i}.jpg`;
-        images.push(context(`./${imagePath}`));
-    }
-    return images;
-};
+import { generateProjectImages } from '../utils/imageLoader';
 
 
 const projectsDataMap = {
@@ -34,7 +24,7 @@ const projectsDataMap = {
         engTitle: "Scar",
         hebTags: ["וידאו", "רב-תחומי", "אישי", "קולאז׳"],
         engTags: ["Video", "Interdisciplinary", "Personal", "Collage"],
-        images: generateProjectImages(1, 6),
+        images: generateProjectImages('1', 6),
         cinematicPopup: true
     },
     '1-3': {
@@ -46,7 +36,7 @@ const projectsDataMap = {
         engTitle: 'Your\'e Twins, So What',
         hebTags: ["אינפוגרפיקה", "צילום", "אישי", "פרינט"],
         engTags: ["Infography", "Photography", "Print", "Personal"],
-        images: generateProjectImages(2, 5)
+        images: generateProjectImages('2', 5)
     },
     '1-4': {
         index: 3,
@@ -63,7 +53,7 @@ const projectsDataMap = {
         engTitle: 'Everyday Moments',
         hebTags: ["רב-תחומי", "קוד", "UI/UX", "אישי", "פרינט", "מיתוג"],
         engTags: ["Interdisciplinary", "Code", "UI/UX", "Personal", "Print", "Branding"],
-        images: generateProjectImages(3, 8)
+        images: generateProjectImages('3', 8)
     },
     '2-3': {
         index: 4, name: 'Footprints', thumbnailPath: p4Thumbnail,
@@ -73,7 +63,7 @@ const projectsDataMap = {
         engTitle: 'Footprints',
         hebTags: ["רב-תחומי", "קוד", "וידאו"],
         engTags: ["Interdisciplinary", "Code", "Video"],
-        images: generateProjectImages(4, 5),
+        images: generateProjectImages('4', 5),
         cinematicPopup: true
     },
     '2-4': {
@@ -86,7 +76,7 @@ const projectsDataMap = {
         engTitle: 'Trigger it',
         hebTags: ["UI/UX", "לימודי", "תרבותי", "קוד"],
         engTags: ["UI/UX", "Educational", "Cultural", "Code"],
-        images: generateProjectImages(5, 6)
+        images: generateProjectImages('5', 6)
     },
     '2-5': {
         index: 6,
@@ -97,7 +87,7 @@ const projectsDataMap = {
         engTitle: 'The Mashbir Archive',
         hebTags: ["פרינט", "תרבותי", "מיתוג"],
         engTags: ["Print", "Cultural", "Branding"],
-        images: generateProjectImages(6, 5)
+        images: generateProjectImages('6', 5)
     },
     '3-3': {
         index: 7,
@@ -108,7 +98,7 @@ const projectsDataMap = {
         engTitle: 'Nostalgia and Other Pieces',
         hebTags: ["קולאז׳", "צילום", "אישי"],
         engTags: ["Collage", "Photography", "Personal"],
-        images: generateProjectImages(7, 10)
+        images: generateProjectImages('7', 10)
     },
     '3-4': {
         index: 8,
@@ -119,7 +109,7 @@ const projectsDataMap = {
         engTitle: 'Kibbutz Fashion',
         hebTags: ["תרבותי", "פרינט", "אישי"],
         engTags: ["Cultural", "Print", "Personal"],
-        images: generateProjectImages(8, 10)
+        images: generateProjectImages('8', 10)
     },
 };
 

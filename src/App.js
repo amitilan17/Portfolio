@@ -1,13 +1,15 @@
-import React, {useState} from 'react';
+import React, {useState, useCallback, useRef} from 'react';
 import styles from './App.module.css';
 import Grid from './components/Grid/Grid.js';
 import Popup from "./components/Popup/Popup";
+import { preloadProjectImages } from './utils/imageLoader';
 
 const App = () => {
     const [activeCell, setActiveCell] = useState(null);
     const [isAboutCellOpen, setIsAboutCellOpen] = useState(false);
     const [isHeb, setIsHeb] = useState(true);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const preloadedProjectsRef = useRef(new Set());
 
     const grid = !isAboutCellOpen ?
         [
@@ -19,12 +21,18 @@ const App = () => {
             [{row: 0, col: 0, rowSpan: 2, colSpan: 4}, null, null, null, {row: 0, col: 4}],
             [null, null, null, null, {row: 1, col: 4}],
             [{row: 2, col: 0}, {row: 2, col: 1}, {row: 2, col: 2}, {row: 2, col: 3}, {row: 2, col: 4}]
-        ]
-    ;
+        ];
 
-    const handleCellClick = (cell) => {
+    const handleCellClick = useCallback((cell) => {
         setActiveCell(cell);
-    };
+        const cellKey = `${cell.row}-${cell.col}`;
+        const key = `${cellKey}-full`;
+        if (!preloadedProjectsRef.current.has(key)) {
+            preloadProjectImages(cell, 3).then(() => {
+                preloadedProjectsRef.current.add(key);
+            });
+        }
+    }, []);
 
     const handleClosePopup = () => {
         setActiveCell(null);
@@ -32,7 +40,7 @@ const App = () => {
 
     const handleAboutCell = (isOpen) => {
         setIsAboutCellOpen(isOpen);
-    }
+    };
 
     const handleToggleLanguage = () => {
         setIsHeb(!isHeb);
@@ -64,14 +72,11 @@ const App = () => {
                 isHeb={isHeb}
             />
             {activeCell &&
-                <Popup cell={activeCell} onClose={handleClosePopup} isHeb={isHeb}/>
+                <Popup cell={activeCell} onClose={handleClosePopup} isHeb={isHeb} />
             }
         </div>
     );
 };
-
-export default App;
-
 
 function LanguageMenu({ onMouseLeave, onOpenDropdown, isHeb, isDropdownOpen, onToggleLanguage }) {
     return (
@@ -95,3 +100,5 @@ function LanguageMenu({ onMouseLeave, onOpenDropdown, isHeb, isDropdownOpen, onT
         </div>
     );
 }
+
+export default App;
